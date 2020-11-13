@@ -1,0 +1,61 @@
+---
+title:  "Academic Portfolio"
+categories: [jekyll]
+tags: [jekyll]
+# driveId: 1DC8rpkC3F-YFn3_XBL8wSolBGFKUU5R2/preview
+
+---
+
+
+<body style="background-color:white;">
+<h4><strong><p style="color:#1f618d;">Selected Projects</p></strong></h4>
+<p style="margin-top:-15px;">Designed an online Course on fashion styling - “What to wear” using Human Centered Design, Design Thinking and Backwards Design as ID theories. <br>
+<figure>
+<iframe src="https://drive.google.com/file/d/1DC8rpkC3F-YFn3_XBL8wSolBGFKUU5R2/preview" width="640" height="480"></iframe> 
+ <figcaption style="text-align:center;">Mock up of the online learning platform</figcaption>
+ </figure>
+</p>  
+<p style= "margin-top:15px;"> Developed career  curriculum for students based on developmental and post-secondary success theory. <br>
+<figure>
+<iframe src="https://drive.google.com/file/d/1hvV_kV10WgWl3ER_q3vedP8aTrVz1_Ft/preview" width="640" height="480"></iframe>
+ <figcaption style="text-align:center;">Outline of the Career Curriculum</figcaption>
+ </figure>
+</p>
+<p>Designed training programs and curriculum for teaching on topics such as “Data-driven decision making in classrooms”, “Supporting career development of high school students”, “Creating an online community” <br> 
+<figure>
+<iframe src="https://drive.google.com/file/d/1zq2fBp7XxtlQQN-y8h0rql1siED8car4/preview" width="640" height="480"></iframe> 
+ <figcaption style="text-align:center;">Facilitator guide for executing the Career Curriculum</figcaption>
+ </figure> <br>
+ <figure>
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTFoM0kljVQIwjVd-p306Vcvxyp3P9o2eU75_NbX8wf7dkTFwm8KUzsR8EdIFTXe9n2fHKthRYXHEFE/embed?start=false&loop=false&delayms=3000" frameborder="0" width="640" height="480" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+ <figcaption style="text-align:center;">Training program slides for Teachers</figcaption>
+ </figure>
+
+
+<!-- <figure>
+  <iframe src="https://drive.google.com/file/d/1DC8rpkC3F-YFn3_XBL8wSolBGFKUU5R2/preview" width="640" height="480"></iframe>
+  <figcaption style="text-align:center;">This is my caption text.</figcaption>
+</figure> -->
+<!-- {% include googledriverplayer.html id=page.driveId %} -->
+
+<!-- <h4 id="working-papers"><strong>Working Papers</strong></h4> -->
+
+<!--    <p><b><font size="3"><a href="https://e-archivo.uc3m.es/bitstream/handle/10016/29397/we1919.pdf?sequence=1" style="color:#2e86c1;" target="_blank">Clean Energy Access: Gender Disparity, Health, and Labor Supply, </a></font><font size="3">Joint with <a href="https://sites.google.com/a/hawaii.edu/imelda/" style="color:#1f618d;" target="_blank">Imelda</a></font>, <em><font size="3">R&R at <span style="font-weight:bold">The Economic Journal</span></font></em>, [<font size="2">Coverage: <a href="https://www.globaldev.blog/blog/improving-women’s-health-and-economic-outcomes-access-clean-energy" style="color:#1f618d;">GlobalDev</a></font>]</b></p>
+<ul style="margin-top:-20px;">    -->
+  
+  <!-- <p><b><strong><font size="3"><a href="https://www.dropbox.com/s/638v21f7fkvwwos/CleanEnergyAccess_V2.pdf?dl=0" target="_blank">Clean Energy Access: Gender Disparity, Health, and Labor Supply</a></font></strong><font size="3">, joint with <a href="https://sites.google.com/a/hawaii.edu/imelda/" target="_blank">Imelda</a></font>, <em><font size="3">R&R at <span style="font-weight:bold">The Economic Journal</span></font></em>, [<font size="2"> Coverage: <a href="https://www.globaldev.blog/blog/improving-women’s-health-and-economic-outcomes-access-clean-energy" > GlobalDev</a> | <a href="http://energyecolab.uc3m.es/wp-content/uploads/2020/10/03_Newsletter-EnergyEcoLab_2020-3.pdf" >EnergyEcoLab Newsletter</a></font> ] </b></p>
+<ul style="margin-top:-20px;">
+  
+<details><summary><font size="2">Abstract:</font></summary><font size="2"><p>Women are known to bear the largest share of health, time and labor supply burden associated with a lack of modern energy. In this paper, we study the impact of clean energy access on adult health and labor supply outcomes by exploiting a nationwide rollout of clean cooking fuel program in Indonesia. This program led to a large-scale fuel switching, from kerosene, a dirty fuel, to liquid petroleum gas, a significantly cleaner and efficient cooking fuel than kerosene. Using rich longitudinal survey data from the Indonesia Family Life Survey and the staggered structure of the program roll-out, we find that access to clean cooking led to a significant improvement in women's health, particularly among those who spend most of their time indoors doing housework. We also find an increase in the labor supplied by these women suggesting that having clean and efficient cooking fuel may not only improved women's health but also improve their productivity, subsequently allowing them to supply more market labor. For men, we find an increase in the hours of labor supplied, with a higher increase among men in households where women accrued the largest health and labor benefits from the program. These results highlight the role of clean energy in reducing gender-disparity in health and labor participation and point to the existence of positive externality from improved health and productivity of women on other members of the household.</p></font></details> -->
+<!-- </ul> -->
+
+<!--<h4 id="work-in-progress"><strong>Work in Progress</strong></h4>-->
+<!--<ul>-->
+<!--<p><b><font size="3">Mismatches in College Quality and Student Quality: A Rank-Based Perspective </font> </b></p>-->
+  
+<!--<p><b><font size="3">Impact of Schools' Financial Incentives on Students' Outcomes </font></b></p>-->
+  
+<!--<p><b><font size="3">Can Technology Mitigate the Impact of Heat on Labor Productivity? </font><br/><font size="2">(Joint with Anna Custers, <a href="https://www.poverty-action.org/people/bhavani-prathap-kasina" target="_blank">Bhavani Prathap Kasina</a> and <a href="https://sites.google.com/view/deepak-saraswat/home?authuser=0" target="_blank">Deepak Saraswat</a>)</font></b></p>-->
+<!--</ul>-->
+
+

@@ -1,0 +1,9 @@
+---
+title:  "About"
+categories: [jekyll]
+tags: [jekyll]
+---
+I am a recent graduate from the Harvard Graduate School of Education, with a specialization in Learning and Teaching. <br/> <br/>
+I began my journey in education as a Teach for India fellow, during which time I was responsible for teaching 35 English as Second Language learners in a state-funded public school. <br> <br>
+Post my fellowship, I have worked in capacities of Curriculum Design, Academic and Career Coaching ,Teacher Training and Instructional Design, Learning Experience Design in multiple not-for-profits and emerging start-ups in India. <br><br>
+Currently, I am working as an Online Learning Fellow in the Learning Design Team at the Teaching and Learning Lab at Harvard GSE. 
