@@ -5,7 +5,6 @@ tags: [jekyll]
 ---
 <h4>Prerna Munoth</h4>
 <br/>
-<strong>Mailing Address:</strong><br/> 3 Hermann Museum Circle Drive, Apt. 3115, Houston, Texas-77004 <br/><br/>
-<strong>Mailto:</strong> prernamunoth@gse.harvard.edu  ,  prerna.munoth@gmail.com
+<strong>Mailto:</strong> prernamunoth@gse.harvard.edu
 
         
