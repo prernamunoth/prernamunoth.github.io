@@ -1794,7 +1794,7 @@
 
         <div class="cform">
           <div class="cform-title">Send a message</div>
-          <form id="contactForm">
+          <form id="contactForm" action="https://formspree.io/f/xreavqgp" method="POST">
             <div class="fg-row">
               <div class="fg">
                 <label>Name</label>
@@ -1996,13 +1996,30 @@
     function closeMob() { document.getElementById('mobileNav').classList.remove('open'); }
 
     /* ── Contact form ────────────────────────────────────── */
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
+    document.getElementById('contactForm').addEventListener('submit', async function(e) {
       e.preventDefault();
-      const d = new FormData(this);
-      const body = `From: ${d.get('name')} (${d.get('email')})\n\n${d.get('message')}`;
-      window.location.href = `mailto:prerna.munoth@gmail.com?subject=${encodeURIComponent(d.get('subject'))}&body=${encodeURIComponent(body)}`;
-      this.style.display = 'none';
-      document.getElementById('form-ok').style.display = 'block';
+      const btn = this.querySelector('.form-btn');
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+      try {
+        const res = await fetch(this.action, {
+          method: 'POST',
+          body: new FormData(this),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          this.style.display = 'none';
+          document.getElementById('form-ok').style.display = 'block';
+        } else {
+          btn.textContent = 'Send Message →';
+          btn.disabled = false;
+          alert('Something went wrong. Please try again or email prerna.munoth@gmail.com directly.');
+        }
+      } catch(err) {
+        btn.textContent = 'Send Message →';
+        btn.disabled = false;
+        alert('Network error. Please try again or email prerna.munoth@gmail.com directly.');
+      }
     });
   </script>
 </body>
