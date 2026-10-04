@@ -3,10 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prerna Munoth — Learning Experience Designer</title>
+  <title>Prerna Munoth — Senior LX Designer · AI for Learning</title>
+  <meta name="description" content="Prerna Munoth is a Senior LX Designer focused on AI for Learning, creating human-centered learning experiences, AI tools, and scalable workplace learning.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Prerna Munoth — Senior LX Designer · AI for Learning">
+  <meta property="og:description" content="Prerna Munoth is a Senior LX Designer focused on AI for Learning, creating human-centered learning experiences, AI tools, and scalable workplace learning.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Prerna Munoth — Senior LX Designer · AI for Learning">
+  <meta name="twitter:description" content="Prerna Munoth is a Senior LX Designer focused on AI for Learning, creating human-centered learning experiences, AI tools, and scalable workplace learning.">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     /* ─── Design Tokens ──────────────────────────────────── */
     :root {
@@ -49,7 +56,6 @@
       position: fixed; top: 0; left: 0; height: 2.5px; z-index: 9999;
       background: linear-gradient(90deg, var(--amber), var(--teal));
       width: 0%; transition: width 80ms linear;
-      box-shadow: 0 0 10px rgba(245,158,11,0.6);
     }
 
     /* ─── Navigation ─────────────────────────────────────── */
@@ -58,8 +64,8 @@
       height: 60px; padding: 0 40px;
       display: flex; align-items: center; justify-content: space-between;
       background: rgba(12,17,32,0.88);
-      backdrop-filter: saturate(200%) blur(24px);
-      -webkit-backdrop-filter: saturate(200%) blur(24px);
+      backdrop-filter: saturate(150%) blur(10px);
+      -webkit-backdrop-filter: saturate(150%) blur(10px);
       border-bottom: 1px solid var(--border-d);
     }
     .nav-brand {
@@ -90,7 +96,7 @@
     .nav-resume:hover { background: var(--amber-2); transform: translateY(-1px); }
     .nav-toggle { display: none; flex-direction: column; gap: 4px; cursor: pointer; padding: 4px; }
     .nav-toggle span { display: block; width: 20px; height: 2px; background: rgba(255,255,255,.7); border-radius: 2px; transition: .3s; }
-    .mobile-nav { display: none; position: fixed; top: 60px; left: 0; right: 0; background: rgba(12,17,32,.97); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border-d); z-index: 999; flex-direction: column; padding: 16px 24px 24px; }
+    .mobile-nav { display: none; position: fixed; top: 60px; left: 0; right: 0; background: rgba(12,17,32,.97); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border-d); z-index: 999; flex-direction: column; padding: 16px 24px 24px; }
     .mobile-nav.open { display: flex; }
     .mobile-nav a { padding: 14px 0; font-size: 15px; font-weight: 500; color: rgba(255,255,255,.75); border-bottom: 1px solid var(--border-d); }
     .mobile-nav a:last-child { border-bottom: none; }
@@ -112,7 +118,6 @@
       display: inline-flex; align-items: center; gap: 12px;
       font-family: var(--fmono); font-size: 11px; color: var(--amber);
       letter-spacing: .14em; text-transform: uppercase; margin-bottom: 32px;
-      opacity: 0;
     }
     .hero-eyebrow::before, .hero-eyebrow::after {
       content: ''; display: block; height: 1px; width: 32px;
@@ -122,18 +127,17 @@
       font-family: var(--fhead);
       font-size: clamp(56px, 10vw, 112px);
       font-weight: 700; letter-spacing: -.035em; line-height: .9;
-      color: #fff; margin-bottom: 24px; opacity: 0;
+      color: #fff; margin-bottom: 24px;
     }
     .hero-name em { font-style: normal; color: var(--amber); }
     .hero-sub {
       font-size: clamp(15px, 2vw, 20px); font-weight: 300;
       color: var(--text-dim); line-height: 1.6; margin-bottom: 40px;
-      opacity: 0;
     }
     .hero-sub strong { font-weight: 600; color: rgba(255,255,255,.9); }
     .hero-chips {
       display: flex; flex-wrap: wrap; gap: 8px;
-      justify-content: center; margin-bottom: 48px; opacity: 0;
+      justify-content: center; margin-bottom: 48px;
     }
     .hero-chip {
       font-family: var(--fmono); font-size: 11px; font-weight: 400;
@@ -143,7 +147,7 @@
       background: rgba(255,255,255,.04);
     }
     .hero-chip.gold { border-color: rgba(245,158,11,.4); color: var(--amber); background: rgba(245,158,11,.07); }
-    .hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; opacity: 0; }
+    .hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
     .btn {
       display: inline-flex; align-items: center; gap: 8px;
       padding: 13px 26px; border-radius: 8px;
@@ -247,23 +251,18 @@
       border: 1px solid var(--border-d); overflow: hidden;
       position: sticky; top: 76px;
     }
-    .instructor-photo {
-      aspect-ratio: 4/3;
-      background: linear-gradient(135deg, var(--navy-2) 0%, var(--navy-3) 100%);
-      display: flex; align-items: center; justify-content: center;
-      position: relative; overflow: hidden;
-    }
-    .headshot-img {
-      width: 100%; height: 100%;
-      object-fit: cover; object-position: center top;
-      display: block;
+    .instructor-heading { display: flex; align-items: center; gap: 16px; margin-bottom: 18px; }
+    .profile-headshot {
+      width: 112px; height: 112px; flex: 0 0 auto;
+      border: 2px solid var(--border-d); border-radius: 50%;
+      object-fit: cover; object-position: center 25%;
     }
     .instructor-body { padding: 22px; }
     .instructor-name {
       font-family: var(--fhead); font-size: 19px; font-weight: 700;
       color: #fff; margin-bottom: 3px;
     }
-    .instructor-role { font-size: 12px; color: var(--teal); font-weight: 600; margin-bottom: 18px; }
+    .instructor-role { font-size: 12px; color: var(--teal); font-weight: 600; margin-bottom: 0; }
     .meta-row {
       display: flex; align-items: center; gap: 10px;
       font-family: var(--fmono); font-size: 11px;
@@ -423,7 +422,7 @@
       border: 1px solid var(--border);
       overflow: hidden; transition: all .35s;
     }
-    .case-card:hover { transform: translateY(-6px); box-shadow: 0 24px 64px rgba(0,0,0,.1); }
+    .case-card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(0,0,0,.08); }
     .case-card.wide {
       grid-column: 1 / -1;
       display: grid; grid-template-columns: 1fr 1fr;
@@ -621,7 +620,8 @@
     .ft-r { font-family: var(--fmono); font-size: 11px; color: rgba(255,255,255,.2); }
 
     /* ─── Scroll reveal ──────────────────────────────────── */
-    .reveal { opacity: 0; transform: translateY(32px); transition: opacity .75s ease, transform .75s ease; }
+    .reveal { opacity: 1; transform: none; }
+    .js-motion .reveal { opacity: 0; transform: translateY(24px); transition: opacity .45s ease, transform .45s ease; }
     .reveal.in  { opacity: 1; transform: translateY(0); }
 
     /* ─── Responsive ─────────────────────────────────────── */
@@ -654,6 +654,12 @@
       .comp-divider { display: none; }
       .comp-pill    { padding: 16px 0; border-bottom: 1px solid var(--border-d); border-right: none; }
       .comp-pill:last-child { border-bottom: none; }
+      .profile-headshot { width: 92px; height: 92px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+      .js-motion .reveal { opacity: 1; transform: none; }
     }
   </style>
 
@@ -856,12 +862,11 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      box-shadow: 0 2px 16px rgba(0,0,0,.06);
       transition: box-shadow .25s, transform .25s;
     }
     .mm-card:hover {
-      box-shadow: 0 8px 32px rgba(0,0,0,.12);
-      transform: translateY(-3px);
+      box-shadow: 0 6px 18px rgba(0,0,0,.08);
+      transform: translateY(-2px);
     }
     .mm-badge {
       display: flex;
@@ -906,6 +911,12 @@
       background: #000;
       overflow: hidden;
     }
+    .mm-load {
+      display: grid; place-items: center; width: 100%; height: 100%;
+      border: 0; background: #101722; color: #fff;
+      font: 600 14px var(--fbody); cursor: pointer;
+    }
+    .mm-load:hover { background: #182438; }
     .mm-card-audio .mm-player { padding: 0 16px; }
     .mm-audio-player {
       display: flex;
@@ -1106,7 +1117,7 @@
   <section id="hero">
     <canvas id="hero-canvas"></canvas>
     <div class="hero-inner">
-      <div class="hero-eyebrow">Learning Experience Design</div>
+      <div class="hero-eyebrow">Senior LX Designer · AI for Learning</div>
       <h1 class="hero-name">Prerna<br><em>Munoth</em></h1>
       <p class="hero-sub">
         Harvard &amp; Teach for India alumna with <strong>10+ years of experience</strong> leveraging technology to design inclusive, human-centered learning environments across diverse delivery modes.
@@ -1221,8 +1232,13 @@
 
         <div class="instructor-card reveal">
           <div class="instructor-body" style="padding:28px 24px;">
-            <div class="instructor-name">Prerna Munoth</div>
-            <div class="instructor-role">Senior LX Designer · L&amp;D Leader</div>
+            <div class="instructor-heading">
+              <img class="profile-headshot" src="images/prerna-munoth-headshot.jpg" width="480" height="480" alt="Prerna Munoth">
+              <div>
+                <div class="instructor-name">Prerna Munoth</div>
+                <div class="instructor-role">Senior LX Designer · AI for Learning</div>
+              </div>
+            </div>
             <div class="meta-row">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><circle cx="12" cy="11" r="3"/></svg>
               Dallas, TX
@@ -1250,6 +1266,7 @@
                 <span class="lang-pill">Tamil</span>
                 <span class="lang-pill">Marwari</span>
                 <span class="lang-pill">French</span>
+                <span class="lang-pill">Spanish</span>
               </div>
             </div>
           </div>
@@ -1366,7 +1383,7 @@
             <span class="cur-index">M1</span>
             <span class="cur-emoji">🏛️</span>
             <div class="cur-info">
-              <div class="cur-role">Senior LX Designer</div>
+              <div class="cur-role">Senior LX Designer · AI for Learning</div>
               <div class="cur-org">Southern Methodist University · Dallas, TX</div>
             </div>
             <div class="cur-dates">Jun '21 – Present</div>
@@ -1818,13 +1835,7 @@
           <div class="mm-title">Mastering Course Design</div>
           <div class="mm-sub">A Step-by-Step Guide for Faculty — Backward Design framework presented by an AI avatar. Created for SMU faculty onboarding.</div>
           <div class="mm-player mm-video-wrap">
-            <iframe
-              src="https://share.synthesia.io/embeds/videos/5a68f7e5-6fff-4751-ac6d-b26bcc3bfa77"
-              loading="lazy"
-              title="Mastering Course Design — Synthesia AI Avatar"
-              allow="encrypted-media; fullscreen;"
-              style="width:100%;height:100%;border:0;border-radius:0;"
-            ></iframe>
+            <button class="mm-load" type="button" data-embed-src="https://share.synthesia.io/embeds/videos/5a68f7e5-6fff-4751-ac6d-b26bcc3bfa77" data-embed-title="Mastering Course Design — Synthesia AI Avatar">Load video</button>
           </div>
           <div class="mm-meta">
             <span class="mm-tag">Backward Design</span>
@@ -1844,7 +1855,9 @@
             <video
               src="multimedia/Quality_Matters__Blueprint_for_Online_Learning.mp4"
               controls
-              preload="metadata"
+              preload="none"
+              width="1280"
+              height="720"
               style="width:100%;height:100%;display:block;border-radius:0;background:#000;"
             ></video>
           </div>
@@ -1864,7 +1877,7 @@
           <div class="mm-sub">A long-form AI-generated audio piece — designed as an immersive listening experience for async learners. Produced with NotebookLM's audio generation.</div>
           <div class="mm-audio-player">
             <div class="mm-audio-icon">🎙️</div>
-            <audio controls preload="metadata" style="width:100%;margin-top:16px;accent-color:var(--amber);">
+            <audio controls preload="none" style="width:100%;margin-top:16px;accent-color:var(--amber);">
               <source src="multimedia/AQ33HRFES22EK.m4a" type="audio/mp4">
             </audio>
           </div>
@@ -2032,68 +2045,55 @@
 
   <!-- ════ FOOTER ═══════════════════════════════════════════ -->
   <footer>
-    <div class="ft-l">© 2026 Prerna Munoth · Learning Experience Designer</div>
+    <div class="ft-l">© 2026 Prerna Munoth · Senior LX Designer · AI for Learning</div>
     <div class="ft-r">Dallas, TX · prerna.munoth@gmail.com</div>
   </footer>
 
   <!-- ════ SCRIPTS ══════════════════════════════════════════ -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-
   <script>
-    /* ── Lenis smooth scroll ─────────────────────────────── */
-    const lenis = new Lenis({
-      duration: 1.3,
-      easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smooth: true
-    });
-    function raf(t) { lenis.raf(t); requestAnimationFrame(raf); }
-    requestAnimationFrame(raf);
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const revealItems = document.querySelectorAll('.reveal');
+    if (!reducedMotion && 'IntersectionObserver' in window) {
+      let revealMotionEnabled = false;
+      const revealObserver = new IntersectionObserver(entries => {
+        if (!revealMotionEnabled && entries.length) {
+          document.documentElement.classList.add('js-motion');
+          revealMotionEnabled = true;
+        }
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0 });
+      revealItems.forEach(item => revealObserver.observe(item));
+    } else {
+      revealItems.forEach(item => item.classList.add('in'));
+    }
 
-    /* ── GSAP + ScrollTrigger ────────────────────────────── */
-    gsap.registerPlugin(ScrollTrigger);
+    const progress = document.getElementById('progress');
+    let progressFrame = 0;
+    function updateProgress() {
+      progressFrame = 0;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.width = (max > 0 ? Math.min(100, window.scrollY / max * 100) : 0) + '%';
+    }
+    window.addEventListener('scroll', () => {
+      if (!progressFrame) progressFrame = requestAnimationFrame(updateProgress);
+    }, { passive: true });
+    updateProgress();
 
-    // Hero entrance
-    gsap.to('.hero-eyebrow', { opacity: 1, y: 0, duration: .8, delay: .4, ease: 'power2.out',
-      from: { opacity: 0, y: 20 }
-    });
-    gsap.fromTo('.hero-name',    { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: 1.0, delay: .6,  ease: 'power3.out' });
-    gsap.fromTo('.hero-sub',     { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: .8,  delay: .95, ease: 'power2.out' });
-    gsap.fromTo('.hero-chips',   { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: .7,  delay: 1.15, ease: 'power2.out' });
-    gsap.fromTo('.hero-actions', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: .7,  delay: 1.35, ease: 'power2.out' });
-
-    // Scroll reveal
-    document.querySelectorAll('.reveal').forEach(el => {
-      gsap.fromTo(el, { y: 36, opacity: 0 }, {
-        y: 0, opacity: 1, duration: .8, ease: 'power2.out',
-        scrollTrigger: { trigger: el, start: 'top 87%', toggleActions: 'play none none none' }
-      });
-    });
-
-    // Skill cards stagger
-    gsap.fromTo('.sk-card', { y: 36, opacity: 0 }, {
-      y: 0, opacity: 1, stagger: .07, duration: .65, ease: 'power2.out',
-      scrollTrigger: { trigger: '.skills-grid', start: 'top 82%' }
-    });
-
-    // Case cards stagger
-    gsap.fromTo('.case-card', { y: 44, opacity: 0 }, {
-      y: 0, opacity: 1, stagger: .09, duration: .7, ease: 'power2.out',
-      scrollTrigger: { trigger: '.cases-grid', start: 'top 82%' }
-    });
-
-    // Cert cards stagger
-    gsap.fromTo('.cert-card', { y: 24, opacity: 0 }, {
-      y: 0, opacity: 1, stagger: .06, duration: .5, ease: 'power2.out',
-      scrollTrigger: { trigger: '.certs-grid', start: 'top 86%' }
-    });
-
-    /* ── Progress bar ────────────────────────────────────── */
-    lenis.on('scroll', ({ scroll }) => {
-      const max = document.body.scrollHeight - window.innerHeight;
-      document.getElementById('progress').style.width = (scroll / max * 100) + '%';
-    });
+    const navLinks = document.querySelectorAll('.nav-links a');
+    if ('IntersectionObserver' in window) {
+      const navObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          navLinks.forEach(link => link.classList.toggle('active', link.hash === '#' + entry.target.id));
+        });
+      }, { rootMargin: '-80px 0px -70% 0px', threshold: 0 });
+      document.querySelectorAll('section[id]').forEach(section => navObserver.observe(section));
+    }
 
     /* ── Canvas neural network ───────────────────────────── */
     const canvas = document.getElementById('hero-canvas');
@@ -2107,15 +2107,15 @@
       H = canvas.height = canvas.offsetHeight;
     }
     resize();
-    new ResizeObserver(resize).observe(canvas);
+    if ('ResizeObserver' in window) new ResizeObserver(resize).observe(canvas);
 
     canvas.addEventListener('mousemove', e => {
       const r = canvas.getBoundingClientRect();
       mouse.x = e.clientX - r.left;
       mouse.y = e.clientY - r.top;
-    });
+    }, { passive: true });
 
-    for (let i = 0; i < 75; i++) {
+    for (let i = 0; i < 48; i++) {
       nodes.push({
         x: Math.random() * (window.innerWidth  || 1200),
         y: Math.random() * (window.innerHeight || 800),
@@ -2127,7 +2127,10 @@
       });
     }
 
+    let heroVisible = false;
+    let canvasFrame = 0;
     function drawNodes() {
+      canvasFrame = 0;
       ctx.clearRect(0, 0, W, H);
       // Lines
       for (let i = 0; i < nodes.length; i++) {
@@ -2167,9 +2170,43 @@
         ctx.fill();
       });
       ctx.globalAlpha = 1;
-      requestAnimationFrame(drawNodes);
+      if (!reducedMotion && heroVisible && !document.hidden) canvasFrame = requestAnimationFrame(drawNodes);
+    }
+    function updateCanvasAnimation() {
+      if (reducedMotion) {
+        if (!canvasFrame) drawNodes();
+        return;
+      }
+      if (heroVisible && !document.hidden && !canvasFrame) canvasFrame = requestAnimationFrame(drawNodes);
+      if ((!heroVisible || document.hidden) && canvasFrame) {
+        cancelAnimationFrame(canvasFrame);
+        canvasFrame = 0;
+      }
     }
     drawNodes();
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(entries => {
+        heroVisible = entries[0].isIntersecting;
+        updateCanvasAnimation();
+      }).observe(document.getElementById('hero'));
+    } else {
+      heroVisible = true;
+      updateCanvasAnimation();
+    }
+    document.addEventListener('visibilitychange', updateCanvasAnimation, { passive: true });
+
+    document.querySelectorAll('.mm-load').forEach(button => {
+      button.addEventListener('click', () => {
+        const frame = document.createElement('iframe');
+        frame.src = button.dataset.embedSrc;
+        frame.title = button.dataset.embedTitle;
+        frame.allow = 'encrypted-media; fullscreen;';
+        frame.allowFullscreen = true;
+        frame.loading = 'lazy';
+        frame.style.cssText = 'width:100%;height:100%;border:0;border-radius:0';
+        button.replaceWith(frame);
+      }, { once: true });
+    });
 
     /* ── Curriculum accordion ────────────────────────────── */
     function toggleCur(header) {
@@ -2184,19 +2221,6 @@
     }
     // Open first by default
     document.querySelector('.cur-head').click();
-
-    /* ── Active nav link ─────────────────────────────────── */
-    const sects  = document.querySelectorAll('section[id]');
-    const nlinks = document.querySelectorAll('.nav-links a');
-    lenis.on('scroll', ({ scroll }) => {
-      sects.forEach(s => {
-        if (scroll >= s.offsetTop - 80 && scroll < s.offsetTop + s.offsetHeight - 80) {
-          nlinks.forEach(l => l.classList.remove('active'));
-          const a = document.querySelector(`.nav-links a[href="#${s.id}"]`);
-          if (a) a.classList.add('active');
-        }
-      });
-    });
 
     /* ── Mobile nav ──────────────────────────────────────── */
     document.getElementById('navToggle').addEventListener('click', () => {
