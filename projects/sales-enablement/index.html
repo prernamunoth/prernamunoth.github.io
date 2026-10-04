@@ -1,0 +1,3022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A fictional sales-enablement simulation with stakeholder matching, objection handling, a deal case study, and a scenario-based knowledge check.">
+<title>Sales Enablement: Objection Handling | Prerna Munoth Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Instrument+Serif:ital@0;1&family=Mulish:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0d1b2a;
+  --navy2: #162436;
+  --blue: #1a6bff;
+  --blue-light: #4d8fff;
+  --cyan: #00c9b1;
+  --cyan-dim: #00a896;
+  --amber: #ffb830;
+  --rose: #ff5252;
+  --bg: #f0f4fa;
+  --surface: #ffffff;
+  --surface2: #e8edf5;
+  --border: #d0d8e8;
+  --text: #0d1b2a;
+  --muted: #5a6a82;
+  --light: #8a9ab8;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Mulish', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.portfolio-back {
+  display: block;
+  width: fit-content;
+  margin: 12px auto 0;
+  padding: 0 20px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.portfolio-back:hover { color: var(--blue); }
+.simulation-notice {
+  max-width: 960px;
+  margin: 18px auto 0;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+@media (max-width: 700px) { .simulation-notice { margin: 14px 20px 0; } }
+
+/* ─── TOP NAV ─── */
+.topnav {
+  background: var(--navy);
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logo-mark {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, var(--blue), var(--cyan));
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  color: #fff;
+}
+
+.logo-name {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+
+.logo-name span { color: var(--cyan); }
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 99px;
+  background: rgba(0,201,177,0.15);
+  color: var(--cyan);
+  letter-spacing: 0.05em;
+}
+
+.nav-user {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #3a6bcc, #5a3acc);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* ─── HERO ─── */
+.hero {
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(26,107,255,0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26,107,255,0.07) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.hero-glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0,201,177,0.12) 0%, transparent 70%);
+  top: -200px;
+  right: -100px;
+  pointer-events: none;
+}
+
+.hero-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 60px 40px 52px;
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0,201,177,0.12);
+  border: 1px solid rgba(0,201,177,0.25);
+  border-radius: 99px;
+  padding: 5px 14px;
+  margin-bottom: 20px;
+}
+
+.hero-eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--cyan);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+.hero-eyebrow span {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+
+.hero-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: clamp(28px, 4vw, 46px);
+  line-height: 1.08;
+  color: #fff;
+  margin-bottom: 16px;
+  letter-spacing: -0.03em;
+}
+
+.hero-title .accent { color: var(--cyan); }
+
+.hero-desc {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #8a9ab8;
+  max-width: 520px;
+  margin-bottom: 28px;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.hero-stat-val {
+  font-family: 'Syne', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+  margin-bottom: 3px;
+}
+
+.hero-stat-val span { color: var(--cyan); }
+.hero-stat-label { font-size: 11px; color: var(--light); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+
+.hero-cert {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  min-width: 160px;
+  flex-shrink: 0;
+}
+
+.cert-icon { font-size: 40px; margin-bottom: 10px; display: block; }
+.cert-label { font-size: 11px; color: var(--light); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 4px; }
+.cert-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 13px; color: #fff; }
+
+/* ─── PROGRESS STRIP ─── */
+.progress-strip {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 40px;
+  position: sticky;
+  top: 56px;
+  z-index: 100;
+}
+
+.progress-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.progress-label { font-size: 11px; font-weight: 700; color: var(--muted); white-space: nowrap; letter-spacing: 0.05em; text-transform: uppercase; }
+.progress-track { flex: 1; height: 5px; background: var(--surface2); border-radius: 99px; overflow: hidden; }
+.progress-fill { height: 100%; background: linear-gradient(90deg, var(--blue), var(--cyan)); border-radius: 99px; transition: width 0.6s cubic-bezier(.4,0,.2,1); width: 0%; }
+.progress-pct { font-size: 12px; font-weight: 700; color: var(--blue); min-width: 36px; text-align: right; }
+
+/* ─── MAIN ─── */
+.main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 36px 40px 100px;
+}
+
+/* ─── MODULE TABS ─── */
+.module-tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 32px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 5px;
+  overflow-x: auto;
+}
+
+.tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  font-family: 'Mulish', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--muted);
+  transition: all 0.2s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.tab-btn.active {
+  background: var(--navy);
+  color: #fff;
+}
+
+.tab-btn.done { color: var(--cyan-dim); }
+.tab-btn.done .tab-num { background: var(--cyan); color: #fff; }
+.tab-btn.locked { color: var(--light); cursor: not-allowed; opacity: 0.5; }
+.tab-btn.locked .tab-num { background: var(--border); color: var(--light); }
+.tab-btn.locked:hover { background: transparent; color: var(--light); }
+
+.tab-btn:hover:not(.active) { background: var(--surface2); color: var(--text); }
+
+.tab-num {
+  width: 20px;
+  height: 20px;
+  background: var(--surface2);
+  border-radius: 50%;
+  font-size: 10px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.tab-btn.active .tab-num { background: rgba(255,255,255,0.15); color: #fff; }
+
+/* ─── MODULE PANELS ─── */
+.module { display: none; animation: slideUp 0.3s ease; }
+.module.active { display: block; }
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}
+
+.module-hdr { margin-bottom: 28px; }
+.module-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue); margin-bottom: 8px; }
+.module-title { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 26px; letter-spacing: -0.02em; margin-bottom: 8px; }
+.module-desc { font-size: 14px; line-height: 1.7; color: var(--muted); max-width: 600px; }
+
+/* ─── CARDS ─── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 26px;
+  margin-bottom: 18px;
+  transition: box-shadow 0.2s;
+}
+
+.card:hover { box-shadow: 0 4px 24px rgba(13,27,42,0.07); }
+
+.card-eyebrow {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.card-eyebrow.blue { color: var(--blue); }
+.card-eyebrow.cyan { color: var(--cyan-dim); }
+.card-eyebrow.amber { color: #c88a00; }
+.card-eyebrow.rose { color: var(--rose); }
+
+.card h3 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 18px; margin-bottom: 8px; letter-spacing: -0.01em; }
+.card p { font-size: 14px; line-height: 1.75; color: #3a4a5e; }
+
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 18px; }
+
+.highlight-card {
+  border-left: 3px solid var(--blue);
+  background: #f5f8ff;
+}
+
+.warning-card { border-left: 3px solid var(--amber); background: #fffbf0; }
+
+/* ─── PRODUCT BREAKDOWN ─── */
+.product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 18px; }
+
+.product-tile {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.product-tile:hover { border-color: var(--blue); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,107,255,0.1); }
+.product-icon { font-size: 28px; margin-bottom: 10px; display: block; }
+.product-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px; margin-bottom: 5px; }
+.product-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
+.product-price { font-size: 12px; font-weight: 700; color: var(--blue); margin-top: 8px; }
+
+/* ─── BUYER PERSONAS ─── */
+.persona-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 18px; }
+
+.persona-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.persona-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.pa-blue { background: #e8f0ff; }
+.pa-cyan { background: #e0faf7; }
+.pa-amber { background: #fff8e0; }
+.pa-rose { background: #fff0f0; }
+
+.persona-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px; margin-bottom: 2px; }
+.persona-role { font-size: 11px; color: var(--muted); margin-bottom: 8px; font-weight: 600; }
+.persona-pain { font-size: 13px; color: #3a4a5e; line-height: 1.6; margin-bottom: 8px; }
+.persona-hook { font-size: 12px; font-weight: 600; color: var(--blue); }
+
+/* ─── OBJECTIONS ─── */
+.objection-list { display: grid; gap: 12px; }
+
+.obj-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.obj-card:hover { border-color: var(--blue-light); box-shadow: 0 2px 16px rgba(26,107,255,0.08); }
+.obj-card.open { border-color: var(--blue); }
+
+.obj-header {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.obj-left { display: flex; align-items: center; gap: 12px; }
+
+.obj-tag {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.tag-price { background: #fff0e8; color: #c84a00; }
+.tag-time { background: #fff8e0; color: #a06600; }
+.tag-comp { background: #e8f0ff; color: var(--blue); }
+.tag-stake { background: #e8fff7; color: #007a60; }
+.tag-pilot { background: #f5e8ff; color: #7a00c8; }
+.tag-timing { background: #f0f8ff; color: #006699; }
+
+.obj-question { font-size: 14px; font-weight: 600; line-height: 1.4; }
+
+.obj-toggle {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--surface2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: var(--muted);
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+
+.obj-card.open .obj-toggle { background: var(--blue); color: #fff; transform: rotate(45deg); }
+
+.obj-body {
+  display: none;
+  padding: 20px;
+  border-top: 1px solid var(--border);
+  background: #fafbff;
+}
+
+.obj-card.open .obj-body { display: block; }
+
+.obj-section-label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+  margin-top: 14px;
+}
+
+.obj-section-label:first-child { margin-top: 0; }
+
+.obj-context { font-size: 13px; line-height: 1.7; color: #3a4a5e; margin-bottom: 4px; }
+
+.script-box {
+  background: var(--navy);
+  color: #c8d8f0;
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-size: 13px;
+  line-height: 1.75;
+  margin: 8px 0;
+  position: relative;
+}
+
+.script-box::before {
+  content: 'Script';
+  position: absolute;
+  top: -8px;
+  left: 12px;
+  background: var(--blue);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 3px;
+}
+
+.script-box em { color: var(--cyan); font-style: normal; font-weight: 600; }
+
+.proof-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #3a4a5e;
+  margin-bottom: 6px;
+}
+
+.proof-point::before { content: '→'; color: var(--cyan-dim); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+
+.pitfall-box {
+  background: #fff8f0;
+  border: 1px solid #ffd0a8;
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #7a3a00;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.pitfall-box::before { content: '⚠'; flex-shrink: 0; font-size: 13px; }
+
+/* ─── CASE STUDY ─── */
+.cs-banner {
+  background: linear-gradient(135deg, var(--navy), var(--navy2));
+  border-radius: 16px;
+  padding: 36px;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cs-banner::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 300px;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0,201,177,0.06));
+  pointer-events: none;
+}
+
+.cs-eyebrow { font-size: 10px; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--cyan); margin-bottom: 10px; }
+.cs-company { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 24px; color: #fff; margin-bottom: 4px; }
+.cs-tagline { font-size: 14px; color: #6a85a8; margin-bottom: 24px; }
+
+.cs-kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.cs-kpi {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+}
+
+.cs-kpi-val {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 26px;
+  color: var(--cyan);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.cs-kpi-label { font-size: 11px; color: #6a85a8; font-weight: 600; line-height: 1.4; }
+
+.cs-timeline { margin-bottom: 20px; }
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 20px;
+  margin-bottom: 0;
+  position: relative;
+}
+
+.timeline-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 49px;
+  top: 32px;
+  bottom: -2px;
+  width: 2px;
+  background: var(--border);
+}
+
+.timeline-time {
+  text-align: right;
+  padding-top: 6px;
+}
+
+.timeline-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  background: var(--surface2);
+  color: var(--muted);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.timeline-content {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 12px;
+}
+
+.timeline-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px; margin-bottom: 5px; }
+.timeline-text { font-size: 13px; line-height: 1.7; color: #3a4a5e; }
+
+/* ─── STAKEHOLDER AVATARS ─── */
+.stakeholders-section { margin-bottom: 24px; }
+.stakeholders-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-top: 14px; }
+
+.stakeholder-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 12px;
+  text-align: center;
+  transition: all 0.2s;
+  cursor: default;
+}
+
+.stakeholder-card:hover { border-color: var(--blue-light); box-shadow: 0 4px 16px rgba(26,107,255,0.1); transform: translateY(-2px); }
+
+.stakeholder-avatar-wrap {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.stakeholder-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 12px; margin-bottom: 2px; line-height: 1.3; }
+.stakeholder-role { font-size: 10px; color: var(--muted); line-height: 1.4; margin-bottom: 6px; }
+
+.stakeholder-tag {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 3px;
+}
+
+.tag-champion { background: #e0faf7; color: #007a60; }
+.tag-blocker { background: #fff0f0; color: #c83a00; }
+.tag-ae { background: #e8f0ff; color: #1a4acc; }
+.tag-neutral { background: #f0f4fa; color: #5a6a82; }
+.tag-approver { background: #fff8e0; color: #8a6000; }
+
+/* Timeline avatar chips */
+.timeline-people {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.person-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: var(--surface2);
+  border-radius: 99px;
+  padding: 3px 9px 3px 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.person-chip-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  font-weight: 800;
+  color: #fff;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.cs-quote {
+  background: var(--navy);
+  border-radius: 12px;
+  padding: 28px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.cs-quote::before {
+  content: '\201C';
+  position: absolute;
+  top: 8px;
+  left: 20px;
+  font-family: 'Instrument Serif', serif;
+  font-size: 80px;
+  color: rgba(0,201,177,0.2);
+  line-height: 1;
+}
+
+.quote-text {
+  font-family: 'Instrument Serif', serif;
+  font-size: 18px;
+  font-style: italic;
+  line-height: 1.6;
+  color: #c8d8f0;
+  margin-bottom: 14px;
+  padding-top: 10px;
+}
+
+.quote-attr { display: flex; align-items: center; gap: 12px; }
+.quote-avatar { width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, var(--blue), var(--cyan)); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; color: #fff; flex-shrink: 0; }
+.quote-name { font-size: 13px; font-weight: 700; color: #fff; }
+.quote-role { font-size: 11px; color: #6a85a8; }
+
+.cs-objections-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 22px;
+  margin-bottom: 18px;
+}
+
+.cs-obj-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.cs-obj-item {
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.cs-obj-raised { background: #fdf5f0; border: 1px solid #ffd0b8; }
+.cs-obj-response { background: #f0fdf8; border: 1px solid #b0eadc; }
+.cs-obj-label { font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+.cs-obj-raised .cs-obj-label { color: #c84a00; }
+.cs-obj-response .cs-obj-label { color: #007a4a; }
+
+/* ─── SCENARIO ─── */
+.scene-setup {
+  background: var(--navy);
+  border-radius: 14px;
+  padding: 28px;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.scene-setup::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(26,107,255,0.08), rgba(0,201,177,0.05));
+  pointer-events: none;
+}
+
+.scene-eyebrow { font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber); margin-bottom: 12px; }
+.scene-context { font-size: 13px; color: #6a85a8; line-height: 1.7; margin-bottom: 18px; }
+
+.prospect-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+}
+
+.prospect-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #c84a80, #7a3acc); display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; color: #fff; flex-shrink: 0; }
+.prospect-name { font-size: 14px; font-weight: 700; color: #fff; }
+.prospect-info { font-size: 12px; color: #6a85a8; }
+
+.prospect-says {
+  background: rgba(255,255,255,0.03);
+  border-left: 3px solid var(--amber);
+  border-radius: 0 8px 8px 0;
+  padding: 14px 16px;
+}
+
+.prospect-says-label { font-size: 10px; font-weight: 800; letter-spacing: 0.1em; color: var(--amber); text-transform: uppercase; margin-bottom: 6px; }
+.prospect-says-text { font-family: 'Instrument Serif', serif; font-size: 16px; font-style: italic; color: #c8d8f0; line-height: 1.65; }
+
+.scene-context-details {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.scene-detail {
+  background: rgba(255,255,255,0.04);
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+.scene-detail-label { font-size: 10px; font-weight: 700; color: var(--light); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 3px; }
+.scene-detail-val { font-size: 13px; font-weight: 600; color: #c8d8f0; }
+
+.resp-options { display: grid; gap: 10px; margin-bottom: 16px; }
+
+.resp-btn {
+  padding: 15px 18px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 13px;
+  background: var(--surface);
+  text-align: left;
+  font-family: 'Mulish', sans-serif;
+  line-height: 1.6;
+  transition: all 0.2s;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.resp-btn:hover:not(:disabled) { border-color: var(--blue); background: #f5f8ff; }
+.resp-btn.best { border-color: #00a896; background: #f0fdf8; color: #007a60; }
+.resp-btn.ok { border-color: #c8a000; background: #fffbf0; color: #8a6600; }
+.resp-btn.poor { border-color: var(--rose); background: #fff5f5; color: #c83a3a; }
+
+.resp-result {
+  border-radius: 10px;
+  padding: 16px 18px;
+  font-size: 14px;
+  line-height: 1.7;
+  display: none;
+  margin-bottom: 8px;
+}
+
+.resp-result.show { display: block; }
+.resp-result.best { background: #f0fdf8; border: 1px solid #b0eadc; color: #005a44; }
+.resp-result.ok { background: #fffbf0; border: 1px solid #f5d88a; color: #7a5a00; }
+.resp-result.poor { background: #fff5f5; border: 1px solid #f5b8b8; color: #8a2020; }
+
+/* ─── QUIZ ─── */
+.quiz-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px;
+  margin-bottom: 16px;
+  transition: opacity 0.3s;
+}
+
+.quiz-num { font-size: 10px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue); margin-bottom: 10px; }
+.quiz-q { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 17px; margin-bottom: 18px; line-height: 1.4; letter-spacing: -0.01em; }
+
+.quiz-opts { display: grid; gap: 8px; margin-bottom: 14px; }
+
+.quiz-opt {
+  padding: 13px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--surface);
+  text-align: left;
+  font-family: 'Mulish', sans-serif;
+  line-height: 1.5;
+  transition: all 0.15s;
+  color: var(--text);
+}
+
+.quiz-opt:hover:not(:disabled) { border-color: var(--blue-light); background: #f5f8ff; }
+.quiz-opt.correct { border-color: #00a896; background: #f0fdf8; color: #005a44; font-weight: 600; }
+.quiz-opt.wrong { border-color: var(--rose); background: #fff5f5; color: #8a2020; }
+
+.quiz-fb {
+  font-size: 13px;
+  line-height: 1.7;
+  padding: 12px 16px;
+  border-radius: 8px;
+  display: none;
+}
+
+.quiz-fb.show { display: block; }
+.quiz-fb.correct { background: #f0fdf8; border: 1px solid #b0eadc; color: #005a44; }
+.quiz-fb.wrong { background: #fff5f5; border: 1px solid #f5b8b8; color: #8a2020; }
+
+/* ─── NAV ROW ─── */
+/* ─── MATCHING ACTIVITY ─── */
+.activity-wrap {
+  background: var(--surface);
+  border: 2px solid var(--blue);
+  border-radius: 16px;
+  padding: 28px;
+  margin-bottom: 20px;
+}
+
+.activity-eyebrow {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.activity-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+
+.activity-desc { font-size: 13px; color: var(--muted); margin-bottom: 22px; line-height: 1.6; }
+
+.match-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.match-col-label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.match-items { display: flex; flex-direction: column; gap: 8px; }
+
+.match-persona {
+  background: var(--surface2);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 11px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: grab;
+  transition: all 0.15s;
+  user-select: none;
+  min-height: 48px;
+}
+
+.match-persona:active { cursor: grabbing; opacity: 0.7; }
+.match-persona:focus-visible, .match-drop-zone:focus-visible, .obj-header:focus-visible, .hotspot-phrase:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+.match-persona.selected { border-color: var(--blue); box-shadow: 0 0 0 2px rgba(26,107,255,0.18); }
+.match-persona.dragging { opacity: 0.4; border-style: dashed; }
+.match-persona.matched-correct { background: #f0fdf8; border-color: #00a896; color: #005a44; cursor: default; }
+.match-persona.matched-wrong { background: #fff5f5; border-color: var(--rose); color: #8a2020; }
+
+.match-persona-dot {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 800;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.match-drop-zone {
+  background: #f8faff;
+  border: 2px dashed var(--border);
+  border-radius: 8px;
+  padding: 11px 14px;
+  min-height: 48px;
+  font-size: 13px;
+  color: var(--light);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.15s;
+  position: relative;
+}
+
+.match-drop-zone.drag-over { border-color: var(--blue); background: #eef4ff; color: var(--blue); }
+.match-drop-zone.correct { border-color: #00a896; border-style: solid; background: #f0fdf8; }
+.match-drop-zone.wrong { border-color: var(--rose); border-style: solid; background: #fff5f5; }
+.match-drop-zone.has-drop { border-style: solid; border-color: var(--border); }
+
+.drop-hook {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.drop-hook strong { font-style: normal; color: var(--text); display: block; font-size: 11px; margin-bottom: 2px; }
+
+.match-result-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  display: none;
+}
+
+.match-drop-zone.correct .match-result-icon,
+.match-drop-zone.wrong .match-result-icon { display: block; }
+
+.match-score-bar {
+  margin-top: 18px;
+  padding: 14px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  display: none;
+  align-items: center;
+  gap: 10px;
+}
+
+.match-score-bar.show { display: flex; }
+.match-score-bar.perfect { background: #f0fdf8; border: 1px solid #b0eadc; color: #005a44; }
+.match-score-bar.partial { background: #fffbf0; border: 1px solid #f5d88a; color: #7a5a00; }
+
+.match-reset {
+  margin-left: auto;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: 'Mulish', sans-serif;
+  text-decoration: underline;
+}
+
+/* ─── HOTSPOT ACTIVITY ─── */
+.hotspot-wrap {
+  background: var(--surface);
+  border: 2px solid var(--amber);
+  border-radius: 16px;
+  padding: 28px;
+  margin-bottom: 20px;
+}
+
+.hotspot-transcript {
+  background: var(--navy);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.transcript-label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 14px;
+}
+
+.transcript-line {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #c8d8f0;
+  margin-bottom: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.tl-speaker {
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  flex-shrink: 0;
+  padding-top: 2px;
+  min-width: 42px;
+}
+
+.tl-you { color: var(--cyan); }
+.tl-them { color: var(--amber); }
+
+.hotspot-phrase {
+  display: inline;
+  padding: 1px 5px;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  background: rgba(255,184,48,0.15);
+  border: 1.5px solid rgba(255,184,48,0.4);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s;
+  position: relative;
+}
+
+.hotspot-phrase:hover { background: rgba(255,184,48,0.3); border-color: var(--amber); }
+.hotspot-phrase.clicked-correct { background: rgba(0,201,177,0.2); border-color: var(--cyan); color: var(--cyan); }
+.hotspot-phrase.clicked-wrong { background: rgba(255,82,82,0.15); border-color: var(--rose); color: #ff8a8a; }
+.hotspot-phrase.revealed { background: rgba(0,201,177,0.12); border-color: rgba(0,201,177,0.4); }
+
+.hotspot-tooltip {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 12px;
+  color: var(--text);
+  line-height: 1.5;
+  width: 200px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  z-index: 50;
+  pointer-events: none;
+}
+
+.hotspot-tooltip.above-left { left: 0; transform: none; }
+.hotspot-phrase:hover .hotspot-tooltip,
+.hotspot-phrase[aria-expanded="true"] .hotspot-tooltip { display: block; }
+
+.hotspot-tt-label {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.hotspot-tt-correct .hotspot-tt-label { color: var(--cyan-dim); }
+.hotspot-tt-wrong .hotspot-tt-label { color: var(--rose); }
+.hotspot-tt-hint .hotspot-tt-label { color: var(--amber); }
+
+.hotspot-instructions {
+  font-size: 12px;
+  color: #6a85a8;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.hotspot-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+}
+
+.hotspot-score {
+  font-size: 13px;
+  font-weight: 700;
+  padding: 12px 16px;
+  border-radius: 8px;
+  display: none;
+  margin-top: 14px;
+}
+
+.hotspot-score.show { display: block; }
+.hotspot-score.great { background: #f0fdf8; border: 1px solid #b0eadc; color: #005a44; }
+.hotspot-score.ok { background: #fffbf0; border: 1px solid #f5d88a; color: #7a5a00; }
+
+.hs-type-btn {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  font-family: 'Mulish', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s;
+  color: var(--text);
+}
+
+.hs-type-btn:hover:not(:disabled) { border-color: var(--amber); background: #fffbf0; }
+.hs-type-btn.correct { border-color: #00a896; background: #f0fdf8; color: #005a44; }
+.hs-type-btn.wrong { border-color: var(--rose); background: #fff5f5; color: #8a2020; }
+
+.hs-feedback {
+  font-size: 12px;
+  line-height: 1.5;
+  margin-top: 6px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  display: none;
+}
+
+.hs-feedback.show { display: block; }
+.hs-feedback.correct { background: #f0fdf8; color: #005a44; border: 1px solid #b0eadc; }
+.hs-feedback.wrong { background: #fff5f5; color: #8a2020; border: 1px solid #f5b8b8; }
+
+/* ─── NAV ─── */
+.nav-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 32px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+}
+
+.btn {
+  padding: 11px 24px;
+  border-radius: 8px;
+  font-family: 'Mulish', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+  letter-spacing: 0.01em;
+}
+
+.btn-primary { background: var(--navy); color: #fff; }
+.btn-primary:hover { background: var(--blue); }
+.btn-ghost { background: transparent; border: 1.5px solid var(--border); color: var(--muted); }
+.btn-ghost:hover { border-color: var(--navy); color: var(--navy); }
+.btn:disabled { opacity: 0.4; cursor: not-allowed !important; }
+.btn:disabled:hover { background: var(--navy); }
+
+/* ─── COMPLETION ─── */
+.completion {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.completion-ring {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--blue), var(--cyan));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  margin: 0 auto 24px;
+  box-shadow: 0 8px 32px rgba(26,107,255,0.3);
+}
+
+.completion h2 { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 34px; letter-spacing: -0.02em; margin-bottom: 10px; }
+.completion p { font-size: 15px; color: var(--muted); line-height: 1.7; max-width: 500px; margin: 0 auto 28px; }
+
+.score-pill {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  background: var(--navy);
+  color: #fff;
+  padding: 10px 28px;
+  border-radius: 99px;
+  font-family: 'Syne', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 32px;
+}
+
+.score-pill span { font-size: 14px; font-family: 'Mulish', sans-serif; color: #6a85a8; font-weight: 600; }
+
+.cert-preview {
+  background: linear-gradient(135deg, var(--navy), var(--navy2));
+  border: 1px solid rgba(0,201,177,0.3);
+  border-radius: 16px;
+  padding: 28px;
+  max-width: 420px;
+  margin: 0 auto 28px;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.cert-preview::after {
+  content: '🎓';
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+  font-size: 50px;
+  opacity: 0.15;
+}
+
+.cert-preview-eyebrow { font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cyan); margin-bottom: 8px; }
+.cert-preview-title { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 16px; color: #fff; margin-bottom: 4px; }
+.cert-preview-sub { font-size: 12px; color: #6a85a8; margin-bottom: 16px; }
+.cert-preview-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(0,201,177,0.1); border: 1px solid rgba(0,201,177,0.25); border-radius: 6px; padding: 6px 12px; }
+.cert-preview-badge span { font-size: 12px; font-weight: 700; color: var(--cyan); }
+
+@media(max-width: 680px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-cert { display: none; }
+  .two-col, .persona-grid, .product-grid, .cs-obj-row, .scene-context-details { grid-template-columns: 1fr; }
+  .cs-kpis { grid-template-columns: 1fr 1fr; }
+  .stakeholders-grid { grid-template-columns: repeat(3, 1fr); }
+  .topnav, .main, .progress-strip { padding-left: 20px; padding-right: 20px; }
+  .hero-inner { padding: 36px 20px; }
+  .module-tabs { border-radius: 10px; }
+}
+</style>
+</head>
+<body>
+<a class="portfolio-back" href="../../">← Back to portfolio</a>
+<p class="simulation-notice"><strong>Training simulation.</strong> LearnForge and all districts, people and figures are fictional.</p>
+
+<!-- TOP NAV -->
+<nav class="topnav">
+  <a class="logo" href="#">
+    <div class="logo-mark">L</div>
+    <span class="logo-name">Learn<span>Forge</span></span>
+  </a>
+  <div class="nav-right">
+    <span class="nav-badge">Sales Certification Track</span>
+    <div class="nav-user">JR</div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-dot"></div>
+        <span>Module 3 of 6 · Sales Certification</span>
+      </div>
+      <h1 class="hero-title">Objection Handling<br>for <span class="accent">EdTech Sales</span></h1>
+      <p class="hero-desc">Turn skepticism into signed contracts. This module gives you the scripts, frameworks, and real deal breakdowns you need to close in the K–12 and higher education markets.</p>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-val">27<span>min</span></div>
+          <div class="hero-stat-label">Est. Completion</div>
+        </div>
+        <div>
+          <div class="hero-stat-val">5</div>
+          <div class="hero-stat-label">Modules</div>
+        </div>
+        <div>
+          <div class="hero-stat-val">1</div>
+          <div class="hero-stat-label">Case Study</div>
+        </div>
+        <div>
+          <div class="hero-stat-val">4</div>
+          <div class="hero-stat-label">Quiz Questions</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-cert">
+      <span class="cert-icon">🏅</span>
+      <div class="cert-label">Earn Upon Completion</div>
+      <div class="cert-name">Certified EdTech<br>Sales Professional</div>
+    </div>
+  </div>
+</div>
+
+<!-- PROGRESS -->
+<div class="progress-strip">
+  <div class="progress-inner">
+    <span class="progress-label">Progress</span>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    <span class="progress-pct" id="progressPct">0%</span>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- TABS -->
+  <div class="module-tabs" id="moduleTabs">
+    <button class="tab-btn active" onclick="goTo(0)" id="tab0">
+      <span class="tab-num">1</span> Know Your Product
+    </button>
+    <button class="tab-btn locked" onclick="tryGoTo(1)" id="tab1">
+      <span class="tab-num">🔒</span> Know Your Buyer
+    </button>
+    <button class="tab-btn locked" onclick="tryGoTo(2)" id="tab2">
+      <span class="tab-num">🔒</span> Objection Playbook
+    </button>
+    <button class="tab-btn locked" onclick="tryGoTo(3)" id="tab3">
+      <span class="tab-num">🔒</span> Case Study
+    </button>
+    <button class="tab-btn locked" onclick="tryGoTo(4)" id="tab4">
+      <span class="tab-num">🔒</span> Scenario + Quiz
+    </button>
+  </div>
+
+  <!-- ══ MODULE 0: PRODUCT ══ -->
+  <div class="module active" id="mod0">
+    <div class="module-hdr">
+      <div class="module-eyebrow">Module 1 · Product Fluency</div>
+      <h2 class="module-title">Know LearnForge Inside Out</h2>
+      <p class="module-desc">You can't handle objections about a product you don't deeply understand. Before you sell, master the platform — what it does, who it's for, and why it wins.</p>
+    </div>
+
+    <div class="card highlight-card">
+      <div class="card-eyebrow blue">🧠 Company Overview</div>
+      <h3>What is LearnForge?</h3>
+      <p>LearnForge is an AI-powered learning management system (LMS) built exclusively for K–12 districts and higher education institutions. Founded in 2018, we serve 1,400+ institutions across 38 states. Our platform replaces fragmented tools with one unified system for curriculum delivery, student progress tracking, teacher professional development, and district-wide analytics — all powered by an adaptive learning engine that personalizes content to each learner.</p>
+    </div>
+
+    <div class="product-grid">
+      <div class="product-tile">
+        <span class="product-icon">🎓</span>
+        <div class="product-name">LearnForge Core</div>
+        <div class="product-desc">Full LMS with adaptive curriculum, assignments, assessments, and gradebook</div>
+        <div class="product-price">From $8/student/yr</div>
+      </div>
+      <div class="product-tile">
+        <span class="product-icon">📊</span>
+        <div class="product-name">LearnForge Analytics</div>
+        <div class="product-desc">District-wide dashboards, early warning indicators, state compliance reporting</div>
+        <div class="product-price">Add-on: $3/student/yr</div>
+      </div>
+      <div class="product-tile">
+        <span class="product-icon">🤖</span>
+        <div class="product-name">LearnForge AI Tutor</div>
+        <div class="product-desc">Personalized AI instruction layer, Socratic chat, auto-differentiation for IEPs</div>
+        <div class="product-price">Add-on: $5/student/yr</div>
+      </div>
+      <div class="product-tile">
+        <span class="product-icon">👩‍🏫</span>
+        <div class="product-name">PD Hub</div>
+        <div class="product-desc">Credentialed professional development courses for teachers, built-in coaching tools</div>
+        <div class="product-price">$200/teacher/yr</div>
+      </div>
+      <div class="product-tile">
+        <span class="product-icon">🔗</span>
+        <div class="product-name">Rostering & SSO</div>
+        <div class="product-desc">Clever, ClassLink, Google, and AD integrations — zero IT lift for district setup</div>
+        <div class="product-price">Included in Core</div>
+      </div>
+      <div class="product-tile">
+        <span class="product-icon">🏛️</span>
+        <div class="product-name">Higher Ed Suite</div>
+        <div class="product-desc">Syllabus builder, accreditation docs, CourseCloud/Lectern migration tools</div>
+        <div class="product-price">Custom pricing</div>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="card">
+        <div class="card-eyebrow cyan">✦ Why We Win</div>
+        <h3>Key Differentiators</h3>
+        <p>
+          <strong>1. Built for education, not retrofitted.</strong> Unlike generic CRM platforms or FreeClass adaptations, every feature was designed for administrators and educators first.<br><br>
+          <strong>2. Adaptive AI engine.</strong> Our ML model, trained on 140M+ student interactions, auto-adjusts content difficulty and pacing per learner — no teacher configuration required.<br><br>
+          <strong>3. 99.97% uptime SLA.</strong> Our infrastructure is hosted on dedicated ed-gov AWS clusters with SOC 2 Type II, FERPA, COPPA, and WCAG 2.1 AA compliance built in.<br><br>
+          <strong>4. Onboarding that actually works.</strong> Our Customer Success team delivers 94% "go-live in 30 days" rate, with a dedicated CSM for any district 500+ students.
+        </p>
+      </div>
+      <div class="card">
+        <div class="card-eyebrow amber">📈 Competitive Landscape</div>
+        <h3>How We Stack Up</h3>
+        <p>
+          <strong>vs. CourseCloud:</strong> CourseCloud is content-delivery only. No adaptive engine, no district analytics, no PD Hub. Strong in higher ed — we beat them on K–12 and on AI features.<br><br>
+          <strong>vs. FreeClass:</strong> Free tool, minimal reporting, no curriculum, no compliance tooling. Win angle: "Free costs more when you add up all the workarounds."<br><br>
+          <strong>vs. SchoolLink:</strong> Dated UI, weak analytics, an acquisition by a larger vendor created pricing instability. Win angle: Modern platform + better support + transparent pricing.<br><br>
+          <strong>vs. Lectern:</strong> Legacy higher ed tool with notorious implementation issues. Win angle: Migration support, modern UX, faster time to value.
+        </p>
+      </div>
+    </div>
+
+    <div class="card warning-card">
+      <div class="card-eyebrow amber">⚡ Sales Intelligence</div>
+      <h3>Typical Deal Triggers</h3>
+      <p>Most deals are triggered by one of four events: <strong>(1)</strong> A current LMS contract renewal is 6–18 months out; <strong>(2)</strong> A new superintendent or CTO was just hired; <strong>(3)</strong> The district received a grant (ESSER funds, Title I/IV) with a learning technology line item; <strong>(4)</strong> A recent state audit cited learning outcome deficiencies. Always ask: "What's driving your interest in evaluating a new platform right now?" — the answer shapes your entire pitch.</p>
+    </div>
+
+    <div class="nav-row">
+      <div></div>
+      <button class="btn btn-primary" onclick="nextMod(0)" id="nextBtn0">Next: Know Your Buyer →</button>
+    </div>
+  </div>
+
+  <!-- ══ MODULE 1: BUYER ══ -->
+  <div class="module" id="mod1">
+    <div class="module-hdr">
+      <div class="module-eyebrow">Module 2 · Buyer Intelligence</div>
+      <h2 class="module-title">Know Your Buyer Personas</h2>
+      <p class="module-desc">EdTech deals involve 3–5 stakeholders and take 60–180 days to close. Know who's in the room, what they care about, and how to speak their language.</p>
+    </div>
+
+    <div class="persona-grid">
+      <div class="persona-card">
+        <div class="persona-avatar pa-blue">🏫</div>
+        <div>
+          <div class="persona-name">The Superintendent</div>
+          <div class="persona-role">District Superintendent / Deputy Supt.</div>
+          <div class="persona-pain">Worried about board accountability, state assessment scores, equity gaps, and budget scrutiny. Rarely in the weeds — speaks in outcomes, not features.</div>
+          <div class="persona-hook">Lead with: Outcome data, peer district wins, board presentation materials</div>
+        </div>
+      </div>
+      <div class="persona-card">
+        <div class="persona-avatar pa-cyan">💻</div>
+        <div>
+          <div class="persona-name">The CTO / IT Director</div>
+          <div class="persona-role">Chief Technology / Information Officer</div>
+          <div class="persona-pain">Terrified of data breaches, FERPA violations, IT overhead, and failed rollouts. Has been burned before. Needs to see security certs, SLAs, and integration docs before budging.</div>
+          <div class="persona-hook">Lead with: SOC 2 docs, Clever/ClassLink integration, zero-config rostering demo</div>
+        </div>
+      </div>
+      <div class="persona-card">
+        <div class="persona-avatar pa-amber">📚</div>
+        <div>
+          <div class="persona-name">The Curriculum Director</div>
+          <div class="persona-role">Director of Curriculum & Instruction</div>
+          <div class="persona-pain">Needs content to align to state standards, wants teacher adoption, and hates tools that add to teacher workload. If teachers don't use it, she'll kill the deal.</div>
+          <div class="persona-hook">Lead with: Standards alignment maps, teacher time-savings data, PD Hub preview</div>
+        </div>
+      </div>
+      <div class="persona-card">
+        <div class="persona-avatar pa-rose">💰</div>
+        <div>
+          <div class="persona-name">The CFO / Finance Director</div>
+          <div class="persona-role">Chief Financial Officer / Budget Office</div>
+          <div class="persona-pain">Every dollar is scrutinized. They need to justify spend to the board, tie it to grant compliance, and know exactly what the 3-year total cost looks like.</div>
+          <div class="persona-hook">Lead with: TCO calculator, grant eligibility (ESSER/E-Rate), 3-year ROI model</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card highlight-card">
+      <div class="card-eyebrow blue">🗺️ Navigating the Buying Committee</div>
+      <h3>The Champion Strategy</h3>
+      <p>In 78% of won deals, reps identified a strong internal champion early — typically the Curriculum Director or an Instructional Technology Coordinator. Your champion doesn't have final authority, but they navigate internal politics, pre-sell stakeholders, and keep the deal alive between your touchpoints. Ask directly: <em>"Who's most excited about solving this problem inside your district?"</em> Then arm that person with executive summaries, ROI decks, and peer reference calls they can use without you in the room.</p>
+    </div>
+
+    <div class="two-col">
+      <div class="card">
+        <div class="card-eyebrow cyan">🗓️ Deal Cycle Reality</div>
+        <h3>Timeline Benchmarks</h3>
+        <p>
+          <strong>Small district (&lt;1,000 students):</strong> 45–75 days, 2–3 stakeholders<br><br>
+          <strong>Mid-size district (1,000–10,000):</strong> 90–150 days, 4–6 stakeholders, school board vote likely<br><br>
+          <strong>Large district (10,000+):</strong> 120–240 days, formal RFP process, legal review<br><br>
+          <strong>Higher Ed institution:</strong> 90–180 days, faculty senate sign-off often required<br><br>
+          Pro tip: Always ask in the discovery call — "Has your district purchased a new platform over $50K before? What did that process look like?"
+        </p>
+      </div>
+      <div class="card">
+        <div class="card-eyebrow amber">🎯 Discovery Questions That Win</div>
+        <h3>Ask These Every Call</h3>
+        <p>
+          <strong>1.</strong> "What tool are you using today, and when does that contract expire?"<br><br>
+          <strong>2.</strong> "What's the single biggest learning outcome problem your district is trying to solve this year?"<br><br>
+          <strong>3.</strong> "If a new platform worked perfectly, what would be different for teachers in 90 days?"<br><br>
+          <strong>4.</strong> "Who else needs to be part of this conversation before a decision gets made?"<br><br>
+          <strong>5.</strong> "Do you have any grant funding — ESSER, Title IV, E-Rate — that could apply here?"
+        </p>
+      </div>
+    </div>
+
+    <!-- ✦ MATCHING ACTIVITY -->
+    <div class="activity-wrap">
+      <div class="activity-eyebrow">🎯 Practice Activity</div>
+      <div class="activity-title">Match the Persona to Their Pitch Hook</div>
+      <div class="activity-desc">Drag each stakeholder onto the pitch approach that will resonate most, or select a stakeholder and then a pitch hook using a click or keyboard.</div>
+      <p id="matchInstructions" role="status" aria-live="polite" style="font-size:12px;color:var(--muted);margin:-10px 0 18px;">Select a stakeholder, then choose a pitch hook.</p>
+
+      <div class="match-layout">
+        <div>
+          <div class="match-col-label">Stakeholders — drag these</div>
+          <div class="match-items" id="matchPile">
+            <div class="match-persona" role="button" tabindex="0" aria-label="Select Superintendent" aria-pressed="false" onclick="selectPersona(this)" onkeydown="handleMatchKey(event, this, 'persona')" draggable="true" data-persona="supt" id="mp-supt" ondragstart="dragStart(event)">
+              <div class="match-persona-dot" style="background:#1a6b7a">LP</div>
+              Superintendent
+            </div>
+            <div class="match-persona" role="button" tabindex="0" aria-label="Select CTO / IT Director" aria-pressed="false" onclick="selectPersona(this)" onkeydown="handleMatchKey(event, this, 'persona')" draggable="true" data-persona="cto" id="mp-cto" ondragstart="dragStart(event)">
+              <div class="match-persona-dot" style="background:#1a5c3a">CTO</div>
+              CTO / IT Director
+            </div>
+            <div class="match-persona" role="button" tabindex="0" aria-label="Select Curriculum Director" aria-pressed="false" onclick="selectPersona(this)" onkeydown="handleMatchKey(event, this, 'persona')" draggable="true" data-persona="curric" id="mp-curric" ondragstart="dragStart(event)">
+              <div class="match-persona-dot" style="background:#7a3acc">CD</div>
+              Curriculum Director
+            </div>
+            <div class="match-persona" role="button" tabindex="0" aria-label="Select CFO / Finance Director" aria-pressed="false" onclick="selectPersona(this)" onkeydown="handleMatchKey(event, this, 'persona')" draggable="true" data-persona="cfo" id="mp-cfo" ondragstart="dragStart(event)">
+              <div class="match-persona-dot" style="background:#8a3a00">CFO</div>
+              CFO / Finance Director
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="match-col-label">Pitch Hooks — drop here</div>
+          <div class="match-items">
+
+            <div class="match-drop-zone" role="button" tabindex="0" aria-label="Assign a stakeholder to TCO Calculator and Grant Map" aria-pressed="false" data-label="TCO Calculator and Grant Map" data-answer="cfo"
+              onclick="placeSelectedPersona(this)" onkeydown="handleMatchKey(event, this, 'zone')" ondragover="dragOver(event)" ondragleave="dragLeave(event)" ondrop="dropItem(event)">
+              <span class="match-result-icon" id="icon-cfo"></span>
+              <div class="drop-hook">
+                <strong>TCO Calculator + Grant Map</strong>
+                "Here's what your current stack costs all-in, and here are 3 funding sources that could offset year one."
+              </div>
+            </div>
+
+            <div class="match-drop-zone" role="button" tabindex="0" aria-label="Assign a stakeholder to SOC 2 Documents and Zero-Config Rostering Demo" aria-pressed="false" data-label="SOC 2 Documents and Zero-Config Rostering Demo" data-answer="cto"
+              onclick="placeSelectedPersona(this)" onkeydown="handleMatchKey(event, this, 'zone')" ondragover="dragOver(event)" ondragleave="dragLeave(event)" ondrop="dropItem(event)">
+              <span class="match-result-icon" id="icon-cto"></span>
+              <div class="drop-hook">
+                <strong>SOC 2 Docs + Zero-Config Rostering Demo</strong>
+                "Let me show you how we integrate with Clever in under 10 minutes and walk you through our FERPA audit trail."
+              </div>
+            </div>
+
+            <div class="match-drop-zone" role="button" tabindex="0" aria-label="Assign a stakeholder to Peer District Outcomes and Board Deck" aria-pressed="false" data-label="Peer District Outcomes and Board Deck" data-answer="supt"
+              onclick="placeSelectedPersona(this)" onkeydown="handleMatchKey(event, this, 'zone')" ondragover="dragOver(event)" ondragleave="dragLeave(event)" ondrop="dropItem(event)">
+              <span class="match-result-icon" id="icon-supt"></span>
+              <div class="drop-hook">
+                <strong>Peer District Outcomes + Board Deck</strong>
+                "Here's what Maple Crest USD's assessment scores looked like 12 months after launch — and the slide their board used to approve it."
+              </div>
+            </div>
+
+            <div class="match-drop-zone" role="button" tabindex="0" aria-label="Assign a stakeholder to Standards Alignment Map and Teacher Time Savings" aria-pressed="false" data-label="Standards Alignment Map and Teacher Time Savings" data-answer="curric"
+              onclick="placeSelectedPersona(this)" onkeydown="handleMatchKey(event, this, 'zone')" ondragover="dragOver(event)" ondragleave="dragLeave(event)" ondrop="dropItem(event)">
+              <span class="match-result-icon" id="icon-curric"></span>
+              <div class="drop-hook">
+                <strong>Standards Alignment Map + Teacher Time Savings</strong>
+                "Every lesson is tagged to your state standards out of the box, and teachers report saving 3.4 hours a week on grading and planning."
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="match-score-bar" id="matchScore">
+        <span id="matchScoreText"></span>
+        <button class="match-reset" onclick="resetMatch()">↺ Reset</button>
+      </div>
+    </div>
+
+    <div class="nav-row">
+      <button class="btn btn-ghost" onclick="goTo(0)">← Back</button>
+      <button class="btn btn-primary" onclick="nextMod(1)" id="nextBtn1" disabled style="opacity:0.4;cursor:not-allowed;" title="Complete the matching activity to continue">Next: Objection Playbook →</button>
+    </div>
+    <p id="nextHint1" style="text-align:right;font-size:11px;color:var(--muted);margin-top:6px;font-weight:600;">🔒 Complete the matching activity above to unlock</p>
+  </div>
+
+  <!-- ══ MODULE 2: OBJECTIONS ══ -->
+  <div class="module" id="mod2">
+    <div class="module-hdr">
+      <div class="module-eyebrow">Module 3 · Objection Playbook</div>
+      <h2 class="module-title">The Complete EdTech Objection Handbook</h2>
+      <p class="module-desc">Six objections account for 90% of stalled or lost deals. Click each one to get the full context, word-for-word script, supporting proof points, and common pitfalls.</p>
+    </div>
+
+    <div class="objection-list">
+
+      <!-- OBJ 1 -->
+      <div class="obj-card">
+        <button class="obj-header" type="button" aria-expanded="false" aria-controls="objection-body-1" onclick="toggleObj(this)">
+          <div class="obj-left">
+            <span class="obj-tag tag-price">💰 Budget</span>
+            <span class="obj-question">"We don't have budget for this — we're already stretched thin."</span>
+          </div>
+          <div class="obj-toggle">+</div>
+        </button>
+        <div class="obj-body" id="objection-body-1">
+          <div class="obj-section-label">Why This Happens</div>
+          <div class="obj-context">District budgets are genuinely tight, but "no budget" almost always means one of three things: (1) they haven't identified the right funding source, (2) the ROI hasn't been made tangible yet, or (3) you're talking to someone who doesn't control the budget. Clarify before you pitch a solution.</div>
+
+          <div class="obj-section-label">Script</div>
+          <div class="script-box">
+            "I completely understand — every district I talk to is dealing with competing budget priorities. Before we assume it's a dead end, can I ask a couple of questions? <em>First, has your district received any ESSER III funds or applied for E-Rate Category 2 funding?</em> A lot of our customers use those to fully cover their first year. And second, what's your current spend on the tools you're stitching together to do what LearnForge does in one place? We usually find the consolidation savings alone offset most of the investment."
+          </div>
+
+          <div class="obj-section-label">Proof Points</div>
+          <div class="proof-point">73% of our new K–12 customers used ESSER or Title IV funding — we have a funding guide we can send your CFO</div>
+          <div class="proof-point">Avg district consolidates 3–5 tools when switching to LearnForge, saving $12–18 per student in redundant software costs</div>
+          <div class="proof-point">E-Rate Category 2 can cover up to 80% of platform costs for qualifying districts — our team has helped 140+ districts apply</div>
+
+          <div class="obj-section-label">Pitfall</div>
+          <div class="pitfall-box">Don't immediately offer a discount. It devalues the product and signals desperation. Lead with funding sources and ROI math first.</div>
+        </div>
+      </div>
+
+      <!-- OBJ 2 -->
+      <div class="obj-card">
+        <button class="obj-header" type="button" aria-expanded="false" aria-controls="objection-body-2" onclick="toggleObj(this)">
+          <div class="obj-left">
+            <span class="obj-tag tag-comp">🏁 Competitor</span>
+            <span class="obj-question">"We're already using FreeClass and it's free. Why would we pay for this?"</span>
+          </div>
+          <div class="obj-toggle">+</div>
+        </button>
+        <div class="obj-body" id="objection-body-2">
+          <div class="obj-section-label">Why This Happens</div>
+          <div class="obj-context">FreeClass is the most common incumbent. Admins see "free" and stop thinking about total cost. Your job is to reveal the hidden cost of free: teacher time, missing data, equity gaps, compliance risk, and the patchwork of add-on tools districts buy to compensate for GC's limitations.</div>
+
+          <div class="obj-section-label">Script</div>
+          <div class="script-box">
+            "FreeClass is a great starting point, and I respect that it's free — that's a real advantage. I'm curious though: <em>what does your district use for curriculum alignment tracking? For state reporting? For early warning on at-risk students?</em> Most districts end up with 4–6 other tools to fill those gaps. When we add up the licensing costs, plus teacher time switching between platforms, the 'free' tool often costs more than LearnForge on a per-student basis. Want me to put together a side-by-side cost analysis with your current stack?"
+          </div>
+
+          <div class="obj-section-label">Proof Points</div>
+          <div class="proof-point">Districts using FreeClass + add-ons average 4.7 separate platforms — avg cost: $19/student/year vs. LearnForge Core at $8</div>
+          <div class="proof-point">FreeClass provides no adaptive learning — students in LearnForge schools showed 23% higher Lexile growth YOY (2023 internal study)</div>
+          <div class="proof-point">GC has no built-in FERPA compliance audit trail — a real risk for Title I districts under federal monitoring</div>
+
+          <div class="obj-section-label">Pitfall</div>
+          <div class="pitfall-box">Never say "FreeClass is bad" — it will put the prospect on defense. Frame it as "a starting point, not a complete solution."</div>
+        </div>
+      </div>
+
+      <!-- OBJ 3 -->
+      <div class="obj-card">
+        <button class="obj-header" type="button" aria-expanded="false" aria-controls="objection-body-3" onclick="toggleObj(this)">
+          <div class="obj-left">
+            <span class="obj-tag tag-pilot">🧪 Pilot Risk</span>
+            <span class="obj-question">"We tried a new LMS two years ago and it was a disaster. Teachers revolted."</span>
+          </div>
+          <div class="obj-toggle">+</div>
+        </button>
+        <div class="obj-body" id="objection-body-3">
+          <div class="obj-section-label">Why This Happens</div>
+          <div class="obj-context">This is the single most emotionally charged objection in edtech. Failed implementations leave real scar tissue — politically and operationally. The prospect isn't objecting to your product; they're expressing fear of repeating past pain. Your response must acknowledge the hurt before addressing the risk.</div>
+
+          <div class="obj-section-label">Script</div>
+          <div class="script-box">
+            "That experience sounds genuinely painful, and I don't take it lightly. Implementation failure is one of the most common reasons platforms don't stick in districts — and honestly, it's usually less about the technology and more about change management. <em>Can I ask what went wrong specifically?</em> I want to understand the failure mode, because how we'd approach your rollout depends entirely on that. Our implementation team builds a district-specific change management plan before a single teacher logs in — but I want to make sure we're solving for the right risks."
+          </div>
+
+          <div class="obj-section-label">Proof Points</div>
+          <div class="proof-point">94% of customers go live within 30 days — driven by our 3-phase onboarding (technical setup → teacher training → admin certification)</div>
+          <div class="proof-point">Every district 500+ gets a dedicated Customer Success Manager with a 4-hour response SLA</div>
+          <div class="proof-point">Our PD Hub has 60+ teacher training courses that can be completed async — no "all-staff training day" required</div>
+          <div class="proof-point">We offer a 90-day pilot with a small cohort (1 school or grade band) before district-wide commitment — de-risks adoption</div>
+
+          <div class="obj-section-label">Pitfall</div>
+          <div class="pitfall-box">Do not immediately launch into case studies or stats. The prospect needs to feel heard first. Spend 2–3 full minutes in curious listening mode before pivoting to proof.</div>
+        </div>
+      </div>
+
+      <!-- OBJ 4 -->
+      <div class="obj-card">
+        <button class="obj-header" type="button" aria-expanded="false" aria-controls="objection-body-4" onclick="toggleObj(this)">
+          <div class="obj-left">
+            <span class="obj-tag tag-stake">👥 Stakeholders</span>
+            <span class="obj-question">"I need to get buy-in from the school board and our union rep before we can move forward."</span>
+          </div>
+          <div class="obj-toggle">+</div>
+        </button>
+        <div class="obj-body" id="objection-body-4">
+          <div class="obj-section-label">Why This Happens</div>
+          <div class="obj-context">Multi-stakeholder approval is the norm in public education, not the exception. This isn't a soft no — it's a process reality. Your job is to arm your champion with the materials they need to sell internally and to identify the meeting where this gets decided so you can get a seat at the table.</div>
+
+          <div class="obj-section-label">Script</div>
+          <div class="script-box">
+            "Totally makes sense — that's exactly how most district decisions of this size work. Let me make sure I can support that process as well as possible. <em>What does the board need to see to feel confident in a decision like this?</em> And what are the union rep's main concerns likely to be around a new platform? I've put together board-ready one-pagers and teacher impact summaries for other districts going through this — I'd love to customize one for your presentation. Would it be possible for me to join a call with any of them directly?"
+          </div>
+
+          <div class="obj-section-label">Proof Points</div>
+          <div class="proof-point">We have board presentation templates used successfully by 200+ districts — we'll customize with your district's data</div>
+          <div class="proof-point">Teacher union talking points: LearnForge reduces grading time by avg 3.4 hrs/week (internal survey, n=1,200 teachers)</div>
+          <div class="proof-point">We can provide a reference call with a superintendent who went through a similar board approval process</div>
+
+          <div class="obj-section-label">Pitfall</div>
+          <div class="pitfall-box">Don't disappear while they "take it to the board." Establish a clear next step with a date: "When is the next board meeting where this could come up?"</div>
+        </div>
+      </div>
+
+      <!-- OBJ 5 -->
+      <div class="obj-card">
+        <button class="obj-header" type="button" aria-expanded="false" aria-controls="objection-body-5" onclick="toggleObj(this)">
+          <div class="obj-left">
+            <span class="obj-tag tag-time">⏳ Timing</span>
+            <span class="obj-question">"This isn't the right time — we just started the school year and our team is overwhelmed."</span>
+          </div>
+          <div class="obj-toggle">+</div>
+        </button>
+        <div class="obj-body" id="objection-body-5">
+          <div class="obj-section-label">Why This Happens</div>
+          <div class="obj-context">Timing objections in education are often real — educators are stretched thin in September and January. But deals that get pushed to "after the school year" often die. Your goal is to separate legitimate timing from avoidance, and to create a low-lift path forward if they're genuinely busy.</div>
+
+          <div class="obj-section-label">Script</div>
+          <div class="script-box">
+            "That makes complete sense — the first six weeks of school are brutal, and I wouldn't want to add to that. Here's what I'd suggest: let's not try to do anything heavy right now. <em>What if we just locked in a 20-minute call in November to revisit this?</em> That way, if you want to be ready to make a move before the spring budget cycle closes, we have enough lead time. And in the meantime, I can send over a one-page overview your team can read whenever they have 5 minutes."
+          </div>
+
+          <div class="obj-section-label">Proof Points</div>
+          <div class="proof-point">Our onboarding team can work on a district's schedule — including summer rollouts that are transparent to teachers</div>
+          <div class="proof-point">Most districts who want to launch in Fall need to sign by March to allow for summer implementation</div>
+
+          <div class="obj-section-label">Pitfall</div>
+          <div class="pitfall-box">Accepting a vague "let's reconnect later" without a specific date almost always means the deal dies. Lock in a concrete follow-up before you end the call.</div>
+        </div>
+      </div>
+
+      <!-- OBJ 6 -->
+      <div class="obj-card">
+        <button class="obj-header" type="button" aria-expanded="false" aria-controls="objection-body-6" onclick="toggleObj(this)">
+          <div class="obj-left">
+            <span class="obj-tag tag-timing">📋 RFP</span>
+            <span class="obj-question">"We're required to go through a formal RFP process for purchases over $50K."</span>
+          </div>
+          <div class="obj-toggle">+</div>
+        </button>
+        <div class="obj-body" id="objection-body-6">
+          <div class="obj-section-label">Why This Happens</div>
+          <div class="obj-context">Public procurement rules are real. But reps who treat the RFP as a wall lose deals. The ones who win treat the RFP as a tool — because vendors who help write the criteria almost always win. Get into the process early, or help your champion shape the RFP specifications.</div>
+
+          <div class="obj-section-label">Script</div>
+          <div class="script-box">
+            "That's completely normal for a district your size, and we've navigated RFPs many times. <em>Can I ask — has the RFP been written yet, or is your team still defining the requirements?</em> If you're still in the planning phase, I'd love to share the evaluation criteria that other districts have used when selecting platforms like ours — it might save your team a lot of time. And once the RFP is live, we'll make sure our response is comprehensive. LearnForge is also available through cooperative purchasing agreements, which some districts use to bypass the RFP process entirely for pre-vetted vendors."
+          </div>
+
+          <div class="obj-section-label">Proof Points</div>
+          <div class="proof-point">LearnForge is available through cooperative purchasing agreements — a path some districts use to skip an RFP</div>
+          <div class="proof-point">We have a dedicated RFP response team with a 5-business-day turnaround on any RFP document</div>
+          <div class="proof-point">We can share sample RFP scoring rubrics used by districts who selected us — useful as a starting template</div>
+
+          <div class="obj-section-label">Pitfall</div>
+          <div class="pitfall-box">Don't wait to be invited into an RFP. By the time it's published, the winner is often already decided. Influence the criteria before the RFP is written.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ✦ HOTSPOT ACTIVITY -->
+    <div class="hotspot-wrap">
+      <div class="activity-eyebrow" style="color:#c88a00">🔍 Hotspot Activity</div>
+      <div class="activity-title">Spot the Objection Type</div>
+      <div class="activity-desc">Read this sales call transcript. Click on the highlighted phrases where a specific objection type is being raised. Each hotspot tells you if you got it right.</div>
+
+      <div class="hotspot-legend">
+        <div class="legend-item"><div class="legend-dot" style="background:rgba(255,184,48,0.5);border:1.5px solid var(--amber)"></div> Clickable hotspot</div>
+        <div class="legend-item"><div class="legend-dot" style="background:rgba(0,201,177,0.3);border:1.5px solid var(--cyan)"></div> Correct</div>
+        <div class="legend-item"><div class="legend-dot" style="background:rgba(255,82,82,0.2);border:1.5px solid var(--rose)"></div> Incorrect</div>
+      </div>
+
+      <div class="hotspot-transcript">
+        <div class="transcript-label">📞 Call Transcript — Discovery Call · Northgate Unified SD</div>
+
+        <div class="transcript-line">
+          <span class="tl-speaker tl-you">YOU</span>
+          <span>Thanks for making time today, Principal Okafor. I'd love to understand where things stand with your current LMS setup. What's working, and what's feeling broken?</span>
+        </div>
+
+        <div class="transcript-line">
+          <span class="tl-speaker tl-them">THEM</span>
+          <span>Honestly, teachers are frustrated with SchoolLink — the gradebook is clunky and half of them are just using FreeClass on the side anyway. But I'll be straight with you:
+            <button type="button" class="hotspot-phrase" data-type="budget" onclick="clickHotspot(this, 'budget')" id="hs1" aria-expanded="false" aria-controls="hs1-tooltip">
+              our budget is extremely tight this year. We had to cut two instructional coaches just to keep the lights on.
+              <span class="hotspot-tooltip hotspot-tt-hint" id="hs1-tooltip"><span class="hotspot-tt-label">💡 Hint</span>What constraint is being signaled here?</span>
+            </button>
+          </span>
+        </div>
+
+        <div class="transcript-line">
+          <span class="tl-speaker tl-you">YOU</span>
+          <span>That's really helpful context. When you say budget is tight — do you know if the district has any ESSER III funds remaining, or applied for E-Rate Category 2?</span>
+        </div>
+
+        <div class="transcript-line">
+          <span class="tl-speaker tl-them">THEM</span>
+          <span>I'm honestly not sure — that's more on the CFO's side. But even if there's funding,
+            <button type="button" class="hotspot-phrase" data-type="implementation" onclick="clickHotspot(this, 'implementation')" id="hs2" aria-expanded="false" aria-controls="hs2-tooltip">
+              we tried rolling out a new platform three years ago and it was a disaster. Teachers didn't adopt it, we wasted a semester, and the board was furious.
+              <span class="hotspot-tooltip hotspot-tt-hint" id="hs2-tooltip"><span class="hotspot-tt-label">💡 Hint</span>What fear is driving this statement?</span>
+            </button>
+            I don't want to go through that again.
+          </span>
+        </div>
+
+        <div class="transcript-line">
+          <span class="tl-speaker tl-you">YOU</span>
+          <span>That sounds genuinely painful — and I appreciate you being upfront about it. Can I ask what specifically went wrong? Was it change management, technical setup, or something else?</span>
+        </div>
+
+        <div class="transcript-line">
+          <span class="tl-speaker tl-them">THEM</span>
+          <span>Mostly change management — we didn't have enough training time built in. Anyway,
+            <button type="button" class="hotspot-phrase" data-type="stakeholder" onclick="clickHotspot(this, 'stakeholder')" id="hs3" aria-expanded="false" aria-controls="hs3-tooltip">
+              even if I wanted to move forward, I'd have to get the union rep, the CFO, and the Superintendent all aligned. That's not a quick process.
+              <span class="hotspot-tooltip hotspot-tt-hint" id="hs3-tooltip"><span class="hotspot-tt-label">💡 Hint</span>What's the structural challenge being raised?</span>
+            </button>
+          </span>
+        </div>
+
+        <div class="transcript-line">
+          <span class="tl-speaker tl-you">YOU</span>
+          <span>Completely understood. Who would you say is most excited internally about solving the teacher experience problem?</span>
+        </div>
+
+        <div class="transcript-line">
+          <span class="tl-speaker tl-them">THEM</span>
+          <span>Probably our Director of Curriculum — she's been pushing for something better for two years. But look,
+            <button type="button" class="hotspot-phrase" data-type="competitor" onclick="clickHotspot(this, 'competitor')" id="hs4" aria-expanded="false" aria-controls="hs4-tooltip" style="position:relative">
+              we've also been talking to CourseCloud and they already have a relationship with our neighboring district. They offered a pretty attractive package.
+              <span class="hotspot-tooltip hotspot-tt-hint above-left" id="hs4-tooltip"><span class="hotspot-tt-label">💡 Hint</span>What competitive dynamic is being introduced?</span>
+            </button>
+          </span>
+        </div>
+
+      </div>
+
+      <p style="font-size:13px;font-weight:700;color:var(--text);margin-bottom:14px;">Click each highlighted phrase and identify the objection type:</p>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;" id="hotspotBtns">
+        <div>
+          <p style="font-size:11px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Hotspot 1 — What type of objection?</p>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;" id="hs1-btns">
+            <button class="hs-type-btn" onclick="answerHotspot('hs1','budget',this)" data-target="hs1">💰 Budget</button>
+            <button class="hs-type-btn" onclick="answerHotspot('hs1','competitor',this)" data-target="hs1">🏁 Competitor</button>
+            <button class="hs-type-btn" onclick="answerHotspot('hs1','implementation',this)" data-target="hs1">🧪 Failed Impl.</button>
+            <button class="hs-type-btn" onclick="answerHotspot('hs1','stakeholder',this)" data-target="hs1">👥 Stakeholders</button>
+          </div>
+          <div class="hs-feedback" id="hs1-fb"></div>
+        </div>
+        <div>
+          <p style="font-size:11px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Hotspot 2 — What type of objection?</p>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;" id="hs2-btns">
+            <button class="hs-type-btn" onclick="answerHotspot('hs2','implementation',this)" data-target="hs2">🧪 Failed Impl.</button>
+            <button class="hs-type-btn" onclick="answerHotspot('hs2','budget',this)" data-target="hs2">💰 Budget</button>
+            <button class="hs-type-btn" onclick="answerHotspot('hs2','timing',this)" data-target="hs2">⏳ Timing</button>
+            <button class="hs-type-btn" onclick="answerHotspot('hs2','stakeholder',this)" data-target="hs2">👥 Stakeholders</button>
+          </div>
+          <div class="hs-feedback" id="hs2-fb"></div>
+        </div>
+        <div>
+          <p style="font-size:11px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Hotspot 3 — What type of objection?</p>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;" id="hs3-btns">
+            <button class="hs-type-btn" onclick="answerHotspot('hs3','stakeholder',this)" data-target="hs3">👥 Stakeholders</button>
+            <button class="hs-type-btn" onclick="answerHotspot('hs3','timing',this)" data-target="hs3">⏳ Timing</button>
+            <button class="hs-type-btn" onclick="answerHotspot('hs3','rfp',this)" data-target="hs3">📋 RFP</button>
+            <button class="hs-type-btn" onclick="answerHotspot('hs3','budget',this)" data-target="hs3">💰 Budget</button>
+          </div>
+          <div class="hs-feedback" id="hs3-fb"></div>
+        </div>
+        <div>
+          <p style="font-size:11px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Hotspot 4 — What type of objection?</p>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;" id="hs4-btns">
+            <button class="hs-type-btn" onclick="answerHotspot('hs4','competitor',this)" data-target="hs4">🏁 Competitor</button>
+            <button class="hs-type-btn" onclick="answerHotspot('hs4','budget',this)" data-target="hs4">💰 Budget</button>
+            <button class="hs-type-btn" onclick="answerHotspot('hs4','stakeholder',this)" data-target="hs4">👥 Stakeholders</button>
+            <button class="hs-type-btn" onclick="answerHotspot('hs4','timing',this)" data-target="hs4">⏳ Timing</button>
+          </div>
+          <div class="hs-feedback" id="hs4-fb"></div>
+        </div>
+      </div>
+
+      <div class="hotspot-score" id="hotspotScore"></div>
+    </div>
+
+    <div class="nav-row">
+      <button class="btn btn-ghost" onclick="goTo(1)">← Back</button>
+      <button class="btn btn-primary" onclick="nextMod(2)" id="nextBtn2" disabled style="opacity:0.4;cursor:not-allowed;" title="Complete the hotspot activity to continue">Next: Case Study →</button>
+    </div>
+    <p id="nextHint2" style="text-align:right;font-size:11px;color:var(--muted);margin-top:6px;font-weight:600;">🔒 Complete the hotspot activity above to unlock</p>
+  </div>
+
+  <!-- ══ MODULE 3: CASE STUDY ══ -->
+  <div class="module" id="mod3">
+    <div class="module-hdr">
+      <div class="module-eyebrow">Module 4 · Real Deal Breakdown</div>
+      <h2 class="module-title">Case Study: Cedar Hollow Unified School District</h2>
+      <p class="module-desc">A 7,200-student district in Central California. This deal was 4 months in the making, nearly died twice, and closed at $147.2K ARR. Here's exactly how it happened.</p>
+    </div>
+
+    <div class="cs-banner">
+      <div class="cs-eyebrow">📌 Deal Overview</div>
+      <div class="cs-company">Cedar Hollow Unified School District</div>
+      <div class="cs-tagline">7,200 students · Central California · Closed Q3 2023 · 4-month sales cycle</div>
+      <div class="cs-kpis">
+        <div class="cs-kpi">
+          <div class="cs-kpi-val">$147.2K</div>
+          <div class="cs-kpi-label">Year 1 ARR</div>
+        </div>
+        <div class="cs-kpi">
+          <div class="cs-kpi-val">127</div>
+          <div class="cs-kpi-label">Days to Close</div>
+        </div>
+        <div class="cs-kpi">
+          <div class="cs-kpi-val">6</div>
+          <div class="cs-kpi-label">Stakeholders</div>
+        </div>
+        <div class="cs-kpi">
+          <div class="cs-kpi-val">3×</div>
+          <div class="cs-kpi-label">Renewal Upsell</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-eyebrow blue">📋 Background</div>
+      <h3>The Situation Before LearnForge</h3>
+      <p>Cedar Hollow USD was running SchoolLink as their LMS — a contract that was expiring in June 2023. Teachers used SchoolLink for assignments, Google Drive for documents, a separate MTSS tool for intervention tracking, and an Excel-based system for compliance reporting. The new CTO, hired in January 2023, was tasked by the Superintendent with consolidating the district's tech stack and improving data visibility ahead of a state audit expected in 2024.</p>
+    </div>
+
+    <!-- STAKEHOLDER CAST -->
+    <div class="card stakeholders-section">
+      <div class="card-eyebrow blue">👥 Meet the Stakeholders</div>
+      <h3>Everyone in This Deal</h3>
+      <div class="stakeholders-grid">
+
+        <!-- Sarah Chen — AE -->
+        <div class="stakeholder-card">
+          <div class="stakeholder-avatar-wrap">
+            <svg viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" width="56" height="56">
+              <rect width="56" height="56" fill="#1a4acc"/>
+              <circle cx="28" cy="21" r="10" fill="#a8c4ff"/>
+              <ellipse cx="28" cy="46" rx="16" ry="11" fill="#6a9aff"/>
+              <circle cx="28" cy="21" r="7" fill="#d4e4ff"/>
+              <!-- hair -->
+              <path d="M18 19 Q21 10 28 10 Q35 10 38 19 Q36 13 28 13 Q20 13 18 19Z" fill="#2a1a0a"/>
+              <path d="M18 19 Q17 24 19 27" stroke="#2a1a0a" stroke-width="2" fill="none"/>
+              <path d="M38 19 Q39 24 37 27" stroke="#2a1a0a" stroke-width="2" fill="none"/>
+              <!-- face -->
+              <circle cx="25" cy="21" r="1.2" fill="#2a1a0a"/>
+              <circle cx="31" cy="21" r="1.2" fill="#2a1a0a"/>
+              <path d="M25 25 Q28 27 31 25" stroke="#2a1a0a" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+              <!-- collar -->
+              <path d="M22 38 L28 43 L34 38" stroke="#a8c4ff" stroke-width="1.5" fill="none"/>
+            </svg>
+          </div>
+          <div class="stakeholder-name">Sarah Chen</div>
+          <div class="stakeholder-role">Account Executive, LearnForge</div>
+          <span class="stakeholder-tag tag-ae">Our AE</span>
+        </div>
+
+        <!-- Marcus Rivera — CTO -->
+        <div class="stakeholder-card">
+          <div class="stakeholder-avatar-wrap">
+            <svg viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" width="56" height="56">
+              <rect width="56" height="56" fill="#1a5c3a"/>
+              <circle cx="28" cy="21" r="10" fill="#90c8a8"/>
+              <ellipse cx="28" cy="46" rx="16" ry="11" fill="#4a9a6a"/>
+              <circle cx="28" cy="21" r="7" fill="#c8e8d4"/>
+              <!-- hair short -->
+              <path d="M19 20 Q20 11 28 11 Q36 11 37 20 Q35 14 28 14 Q21 14 19 20Z" fill="#1a0a00"/>
+              <!-- face -->
+              <circle cx="25.5" cy="21" r="1.2" fill="#1a0a00"/>
+              <circle cx="30.5" cy="21" r="1.2" fill="#1a0a00"/>
+              <path d="M25 25 Q28 27.5 31 25" stroke="#1a0a00" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+              <!-- tie -->
+              <path d="M26 37 L28 44 L30 37 L28 35Z" fill="#1a5c3a"/>
+              <path d="M22 35 L34 35" stroke="#90c8a8" stroke-width="1.2"/>
+            </svg>
+          </div>
+          <div class="stakeholder-name">Marcus Rivera</div>
+          <div class="stakeholder-role">CTO, Cedar Hollow USD</div>
+          <span class="stakeholder-tag tag-champion">Champion</span>
+        </div>
+
+        <!-- Dr. Priya Nair — Curriculum Director -->
+        <div class="stakeholder-card">
+          <div class="stakeholder-avatar-wrap">
+            <svg viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" width="56" height="56">
+              <rect width="56" height="56" fill="#7a3acc"/>
+              <circle cx="28" cy="21" r="10" fill="#c8a8f0"/>
+              <ellipse cx="28" cy="46" rx="16" ry="11" fill="#a87ae0"/>
+              <circle cx="28" cy="21" r="7" fill="#e8d8ff"/>
+              <!-- hair long -->
+              <path d="M18 19 Q19 9 28 9 Q37 9 38 19 Q36 11 28 11 Q20 11 18 19Z" fill="#1a0820"/>
+              <path d="M18 19 Q16 28 18 36" stroke="#1a0820" stroke-width="3" fill="none"/>
+              <path d="M38 19 Q40 28 38 36" stroke="#1a0820" stroke-width="3" fill="none"/>
+              <!-- face -->
+              <circle cx="25.5" cy="21" r="1.2" fill="#1a0820"/>
+              <circle cx="30.5" cy="21" r="1.2" fill="#1a0820"/>
+              <path d="M25 25 Q28 27.5 31 25" stroke="#1a0820" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+              <!-- earrings -->
+              <circle cx="19.5" cy="23" r="1.5" fill="#ffb830"/>
+              <circle cx="36.5" cy="23" r="1.5" fill="#ffb830"/>
+            </svg>
+          </div>
+          <div class="stakeholder-name">Dr. Priya Nair</div>
+          <div class="stakeholder-role">Curriculum Director, Cedar Hollow USD</div>
+          <span class="stakeholder-tag tag-champion">Champion</span>
+        </div>
+
+        <!-- Bob Hartley — CFO -->
+        <div class="stakeholder-card">
+          <div class="stakeholder-avatar-wrap">
+            <svg viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" width="56" height="56">
+              <rect width="56" height="56" fill="#8a3a00"/>
+              <circle cx="28" cy="21" r="10" fill="#f0b890"/>
+              <ellipse cx="28" cy="46" rx="16" ry="11" fill="#c06030"/>
+              <circle cx="28" cy="21" r="7" fill="#fcd8b8"/>
+              <!-- hair receding -->
+              <path d="M19 20 Q20 12 28 12 Q36 12 37 20 Q35 15 28 15 Q21 15 19 20Z" fill="#5a4030"/>
+              <!-- glasses -->
+              <rect x="22" y="19" width="5" height="4" rx="2" stroke="#3a2a1a" stroke-width="1.2" fill="rgba(200,230,255,0.3)"/>
+              <rect x="29" y="19" width="5" height="4" rx="2" stroke="#3a2a1a" stroke-width="1.2" fill="rgba(200,230,255,0.3)"/>
+              <line x1="27" y1="21" x2="29" y2="21" stroke="#3a2a1a" stroke-width="1"/>
+              <line x1="22" y1="21" x2="20" y2="21" stroke="#3a2a1a" stroke-width="1"/>
+              <line x1="34" y1="21" x2="36" y2="21" stroke="#3a2a1a" stroke-width="1"/>
+              <!-- face -->
+              <path d="M25 26 Q28 28 31 26" stroke="#5a2a10" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+              <!-- suit -->
+              <path d="M24 37 L28 42 L32 37" stroke="#f0b890" stroke-width="1.5" fill="none"/>
+              <path d="M28 37 L28 44" stroke="#c03a00" stroke-width="2.5"/>
+            </svg>
+          </div>
+          <div class="stakeholder-name">Bob Hartley</div>
+          <div class="stakeholder-role">CFO, Cedar Hollow USD</div>
+          <span class="stakeholder-tag tag-blocker">Initial Blocker</span>
+        </div>
+
+        <!-- Superintendent Linda Park -->
+        <div class="stakeholder-card">
+          <div class="stakeholder-avatar-wrap">
+            <svg viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" width="56" height="56">
+              <rect width="56" height="56" fill="#1a6b7a"/>
+              <circle cx="28" cy="21" r="10" fill="#90d4e0"/>
+              <ellipse cx="28" cy="46" rx="16" ry="11" fill="#3a9aaa"/>
+              <circle cx="28" cy="21" r="7" fill="#c8eef4"/>
+              <!-- hair bun -->
+              <path d="M19 20 Q19 10 28 10 Q37 10 37 20 Q35 13 28 13 Q21 13 19 20Z" fill="#2a1a10"/>
+              <circle cx="28" cy="11" r="4" fill="#2a1a10"/>
+              <!-- face -->
+              <circle cx="25.5" cy="21" r="1.2" fill="#1a0a00"/>
+              <circle cx="30.5" cy="21" r="1.2" fill="#1a0a00"/>
+              <path d="M25 25 Q28 27.5 31 25" stroke="#1a0a00" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+              <!-- pearl necklace -->
+              <path d="M21 35 Q28 37 35 35" stroke="none" fill="none"/>
+              <circle cx="23" cy="35.5" r="1.2" fill="#f0f0f0"/>
+              <circle cx="26.5" cy="36.5" r="1.2" fill="#f0f0f0"/>
+              <circle cx="28" cy="36.8" r="1.2" fill="#f0f0f0"/>
+              <circle cx="29.5" cy="36.5" r="1.2" fill="#f0f0f0"/>
+              <circle cx="33" cy="35.5" r="1.2" fill="#f0f0f0"/>
+            </svg>
+          </div>
+          <div class="stakeholder-name">Dr. Linda Park</div>
+          <div class="stakeholder-role">Superintendent, Cedar Hollow USD</div>
+          <span class="stakeholder-tag tag-approver">Final Approver</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="cs-timeline">
+      <div class="timeline-item">
+        <div class="timeline-time"><span class="timeline-badge">Day 1</span></div>
+        <div class="timeline-content">
+          <div class="timeline-title">🎯 First Contact — Cold Outbound via LinkedIn</div>
+          <div class="timeline-text">AE Sarah Chen identified the new CTO hire via a LinkedIn announcement. She sent a 3-line message referencing the SchoolLink contract expiry (found via public procurement records) and a single question: "With a contract renewal coming up, is evaluating alternatives on your radar for this spring?" The CTO replied within 48 hours.</div>
+          <div class="timeline-people">
+            <span class="person-chip"><span class="person-chip-dot" style="background:#1a4acc">SC</span>Sarah Chen</span>
+            <span class="person-chip"><span class="person-chip-dot" style="background:#1a5c3a">MR</span>Marcus Rivera</span>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time"><span class="timeline-badge">Day 8</span></div>
+        <div class="timeline-content">
+          <div class="timeline-title">📞 Discovery Call — Uncovering the Real Problem</div>
+          <div class="timeline-text">Sarah ran a 45-minute discovery call. The CTO mentioned "consolidation" as the goal, but deeper questioning revealed the real pain: the district had failed a 2022 state data audit because their compliance reports were inconsistent across tools. The upcoming 2024 audit was the actual burning platform. Sarah pivoted immediately to LearnForge Analytics' built-in compliance reporting module.</div>
+          <div class="timeline-people">
+            <span class="person-chip"><span class="person-chip-dot" style="background:#1a4acc">SC</span>Sarah Chen</span>
+            <span class="person-chip"><span class="person-chip-dot" style="background:#1a5c3a">MR</span>Marcus Rivera</span>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time"><span class="timeline-badge">Day 19</span></div>
+        <div class="timeline-content">
+          <div class="timeline-title">🖥️ Demo — Tailored to the Audit Risk</div>
+          <div class="timeline-text">Sarah brought in a Solutions Engineer to demo the platform, specifically building a mock compliance report using Cedar Hollow's own publicly available data. The CTO brought in the Curriculum Director and Director of Assessment (unannounced). Both were immediately engaged by the standards alignment visualization. The Curriculum Director became a champion on the spot.</div>
+          <div class="timeline-people">
+            <span class="person-chip"><span class="person-chip-dot" style="background:#1a4acc">SC</span>Sarah Chen</span>
+            <span class="person-chip"><span class="person-chip-dot" style="background:#1a5c3a">MR</span>Marcus Rivera</span>
+            <span class="person-chip"><span class="person-chip-dot" style="background:#7a3acc">PN</span>Dr. Priya Nair</span>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time"><span class="timeline-badge">Day 41</span></div>
+        <div class="timeline-content">
+          <div class="timeline-title">🚨 Deal Almost Dies — Budget Objection</div>
+          <div class="timeline-text">The CFO attended a stakeholder review and objected immediately: "SchoolLink costs us $6/student. You're proposing $11. That's $36K more per year and the board will never approve it." Sarah sent a consolidated TCO model within 24 hours showing that Cedar Hollow was spending $4.20/student on their MTSS tool and $2.80/student on a separate assessment platform — both of which LearnForge replaces. Net result: about $2 per student less than their current stack. The CFO went from blocker to budget champion.</div>
+          <div class="timeline-people">
+            <span class="person-chip"><span class="person-chip-dot" style="background:#1a4acc">SC</span>Sarah Chen</span>
+            <span class="person-chip"><span class="person-chip-dot" style="background:#8a3a00">BH</span>Bob Hartley</span>
+            <span class="person-chip"><span class="person-chip-dot" style="background:#1a5c3a">MR</span>Marcus Rivera</span>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time"><span class="timeline-badge">Day 68</span></div>
+        <div class="timeline-content">
+          <div class="timeline-title">📋 RFP Issued — But Sarah Was Already Inside</div>
+          <div class="timeline-text">District procurement required a formal RFP for purchases over $75K. Crucially, Sarah had worked with the Curriculum Director 3 weeks earlier to share evaluation criteria from comparable districts. The published RFP's scoring rubric weighted "adaptive learning engine" at 25% and "compliance reporting" at 20% — two categories where LearnForge dominates. Two competitors submitted responses. LearnForge scored highest on both weighted criteria.</div>
+          <div class="timeline-people">
+            <span class="person-chip"><span class="person-chip-dot" style="background:#1a4acc">SC</span>Sarah Chen</span>
+            <span class="person-chip"><span class="person-chip-dot" style="background:#7a3acc">PN</span>Dr. Priya Nair</span>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time"><span class="timeline-badge">Day 103</span></div>
+        <div class="timeline-content">
+          <div class="timeline-title">🏛️ Board Meeting — Close Call</div>
+          <div class="timeline-text">A board member raised concerns about "AI in the classroom" and data privacy after seeing "AI Tutor" in the proposal. Sarah had anticipated this: she'd prepared a 2-page parent-friendly data privacy FAQ and a one-pager on FERPA/COPPA compliance, which the Superintendent distributed before the meeting. Motion passed 6–1.</div>
+          <div class="timeline-people">
+            <span class="person-chip"><span class="person-chip-dot" style="background:#1a6b7a">LP</span>Dr. Linda Park</span>
+            <span class="person-chip"><span class="person-chip-dot" style="background:#8a3a00">BH</span>Bob Hartley</span>
+            <span class="person-chip"><span class="person-chip-dot" style="background:#1a4acc">SC</span>Sarah Chen</span>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-time"><span class="timeline-badge">Day 127</span></div>
+        <div class="timeline-content">
+          <div class="timeline-title">✅ Contract Signed — $147.2K ARR</div>
+          <div class="timeline-text">LearnForge Core + Analytics + AI Tutor for all 7,200 students at the negotiated $11/student bundle rate, plus PD Hub for 340 teachers at $200/teacher. That totals $147,200 in annual recurring revenue. Implementation began June 15, in time for Fall 2023 launch. District went live August 28 — one week before school started.</div>
+          <div class="timeline-people">
+            <span class="person-chip"><span class="person-chip-dot" style="background:#1a4acc">SC</span>Sarah Chen</span>
+            <span class="person-chip"><span class="person-chip-dot" style="background:#1a6b7a">LP</span>Dr. Linda Park</span>
+            <span class="person-chip"><span class="person-chip-dot" style="background:#1a5c3a">MR</span>Marcus Rivera</span>
+            <span class="person-chip"><span class="person-chip-dot" style="background:#8a3a00">BH</span>Bob Hartley</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-quote">
+      <div class="quote-text">"What made the difference wasn't the product — honestly, the product sold itself once we saw the compliance reporting demo. What made the difference was that Sarah understood our situation better than we did. She came into every meeting already knowing what our next problem was going to be before we raised it."</div>
+      <div class="quote-attr">
+        <div class="quote-avatar">MR</div>
+        <div>
+          <div class="quote-name">Marcus Rivera</div>
+          <div class="quote-role">CTO, Cedar Hollow Unified School District</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cs-objections-box">
+      <div class="card-eyebrow blue" style="margin-bottom:4px;">🛡️ Objections Encountered & How They Were Handled</div>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:4px;">This deal surfaced 4 major objections. Here's the matched response for each.</p>
+      <div class="cs-obj-row">
+        <div class="cs-obj-item cs-obj-raised">
+          <div class="cs-obj-label">❌ Objection Raised</div>
+          "You're $5 more per student than our current vendor."
+        </div>
+        <div class="cs-obj-item cs-obj-response">
+          <div class="cs-obj-label">✓ How It Was Handled</div>
+          TCO model showing about $2/student in savings compared with the $13/student current stack. LearnForge replaces the separate tools.
+        </div>
+        <div class="cs-obj-item cs-obj-raised">
+          <div class="cs-obj-label">❌ Objection Raised</div>
+          "We have to go through a formal RFP process."
+        </div>
+        <div class="cs-obj-item cs-obj-response">
+          <div class="cs-obj-label">✓ How It Was Handled</div>
+          Shaped RFP criteria early by sharing evaluation rubrics. LearnForge's strengths became the weighted criteria.
+        </div>
+        <div class="cs-obj-item cs-obj-raised">
+          <div class="cs-obj-label">❌ Objection Raised</div>
+          "A board member is worried about AI and data privacy."
+        </div>
+        <div class="cs-obj-item cs-obj-response">
+          <div class="cs-obj-label">✓ How It Was Handled</div>
+          Pre-prepared parent FAQ and FERPA/COPPA one-pager, distributed before the board meeting by the Superintendent.
+        </div>
+        <div class="cs-obj-item cs-obj-raised">
+          <div class="cs-obj-label">❌ Objection Raised</div>
+          "Teachers are going to push back on yet another new platform."
+        </div>
+        <div class="cs-obj-item cs-obj-response">
+          <div class="cs-obj-label">✓ How It Was Handled</div>
+          Curriculum Director champion pre-sold the PD Hub and async training model to teacher leads before district-wide announcement.
+        </div>
+      </div>
+    </div>
+
+    <div class="card warning-card">
+      <div class="card-eyebrow amber">🔑 Key Lessons from This Deal</div>
+      <h3>What Every Rep Should Take Away</h3>
+      <p>
+        <strong>1. Research triggers before outreach.</strong> Sarah found the contract expiry via public procurement records — not luck.<br><br>
+        <strong>2. The stated problem is rarely the real problem.</strong> "Tech consolidation" masked the real pain: audit failure risk. Better discovery unlocked the real urgency.<br><br>
+        <strong>3. Build champions, not just relationships.</strong> The Curriculum Director did half the selling internally. Sarah gave her the ammunition to do it.<br><br>
+        <strong>4. Anticipate every stakeholder's concern before they voice it.</strong> The board data privacy one-pager was prepared before Day 1 because Sarah assumed it would come up.<br><br>
+        <strong>5. TCO beats sticker price every time.</strong> When a CFO sees the full stack cost, the "expensive" vendor often wins on total value.
+      </p>
+    </div>
+
+    <div class="nav-row">
+      <button class="btn btn-ghost" onclick="goTo(2)">← Back</button>
+      <button class="btn btn-primary" onclick="nextMod(3)" id="nextBtn3">Next: Scenario + Quiz →</button>
+    </div>
+  </div>
+
+  <!-- ══ MODULE 4: SCENARIO + QUIZ ══ -->
+  <div class="module" id="mod4">
+    <div class="module-hdr">
+      <div class="module-eyebrow">Module 5 · Apply Your Knowledge</div>
+      <h2 class="module-title">Live Scenario + Knowledge Check</h2>
+      <p class="module-desc">First, handle a real-world prospect situation. Then prove your knowledge with 4 targeted quiz questions.</p>
+    </div>
+
+    <!-- SCENARIO -->
+    <div class="scene-setup">
+      <div class="scene-eyebrow">🎭 Role Play Scenario</div>
+      <div class="scene-context">You're 35 minutes into a demo with the Director of Curriculum at Northvale Unified, a 4,800-student district in suburban Ohio. The demo has gone well — she's engaged, she's been asking follow-up questions, and she nodded when you showed the adaptive learning engine. Then this happens:</div>
+
+      <div class="prospect-card">
+        <div class="prospect-avatar">DR</div>
+        <div>
+          <div class="prospect-name">Dr. Dana Reynolds</div>
+          <div class="prospect-info">Director of Curriculum & Instruction · Northvale USD · 4,800 students</div>
+        </div>
+      </div>
+
+      <div class="prospect-says">
+        <div class="prospect-says-label">Prospect says</div>
+        <div class="prospect-says-text">"Honestly, I love what I'm seeing, and I think this could be really powerful for our teachers. But here's the reality — I brought something like this to our superintendent last year and he basically said 'we can't afford new platforms right now, come back in two years.' I don't want to waste your time if the answer is just going to be no again before we even get started."</div>
+      </div>
+
+      <div class="scene-context-details">
+        <div class="scene-detail">
+          <div class="scene-detail-label">Current Stack</div>
+          <div class="scene-detail-val">SchoolLink + 3 add-ons</div>
+        </div>
+        <div class="scene-detail">
+          <div class="scene-detail-label">Contract Expiry</div>
+          <div class="scene-detail-val">May 2024</div>
+        </div>
+        <div class="scene-detail">
+          <div class="scene-detail-label">Known Pain</div>
+          <div class="scene-detail-val">Teacher burnout, poor data</div>
+        </div>
+      </div>
+    </div>
+
+    <p style="font-size:13px;font-weight:700;margin-bottom:12px;color:var(--text);">How do you respond to Dr. Reynolds?</p>
+
+    <div class="resp-options" id="sceneOpts">
+      <button class="resp-btn" onclick="pickScene(this,'poor','This response dismisses her concern entirely and comes across as pushy. You\u0027ve just told a curriculum director that her read of her own superintendent is wrong — which damages trust.')">
+        "I hear you, but I think it's worth having the conversation anyway. Superintendents are often more open than directors expect when the ROI is presented clearly. Let me send you our pricing deck."
+      </button>
+      <button class="resp-btn" onclick="pickScene(this,'ok','This is solid — you\u0027re creating a low-risk path and identifying the real blocker (the superintendent). However, jumping to solutions before fully understanding her concern misses an opportunity to deepen the relationship. A little more curiosity first would elevate this.')">
+        "That context is really helpful — thank you for being upfront. What if we kept things low-key for now and I helped you build a business case that's designed to speak your superintendent's language? That way, when you do bring it forward, you go in with armor."
+      </button>
+      <button class="resp-btn" onclick="pickScene(this,'best','This is the strongest move. You\u0027re validating her instinct, treating her as a strategic partner rather than a gatekeeper, uncovering the real blocker (superintendent\u0027s specific concern), and creating a collaborative path forward. She\u0027ll remember this conversation.')">
+        "I really appreciate you telling me that — it helps me not waste your time or mine. Can I ask: when your superintendent said 'we can't afford it,' do you know what specifically was driving that? Because if it was purely budget, there may be grant paths we haven't looked at. And if it was something else — timing, a bad past experience, board politics — I'd rather understand that now and figure out if there's actually a path here."
+      </button>
+      <button class="resp-btn" onclick="pickScene(this,'poor','Ending the conversation based on one secondhand account of the superintendent\u0027s position is premature. Dr. Reynolds is clearly your champion — exiting now loses the deal before it even starts.')">
+        "I completely understand — I don't want to put you in an awkward position with your superintendent. Why don't we table this for now and reconnect when the timing is better for your district?"
+      </button>
+    </div>
+
+    <div class="resp-result" id="sceneResult"></div>
+    <div id="sceneRetakeWrap" style="display:none;margin-top:10px;">
+      <button class="btn btn-ghost" style="font-size:12px;padding:8px 16px;" onclick="retakeScene()">↺ Try Again</button>
+    </div>
+
+    <!-- QUIZ -->
+    <hr style="border:none;border-top:1px solid var(--border);margin:36px 0;">
+    <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:18px;margin-bottom:20px;">Knowledge Check — 4 Questions</h3>
+
+    <div class="quiz-card" id="qc1" style="opacity:0.35;pointer-events:none;">
+      <div class="quiz-num">Question 1 of 4</div>
+      <div class="quiz-q">A district CFO says "You're $5 more per student than our current vendor." Based on the Cedar Hollow case study, what's the most effective first move?</div>
+      <div class="quiz-opts" id="qc1opts">
+        <button class="quiz-opt" onclick="answerQ('qc1',this,false,'Offering a discount immediately signals that your pricing wasn\u0027t justified to begin with and trains prospects to always push back on price.')">Offer a 10% discount to close the gap and move the conversation forward</button>
+        <button class="quiz-opt" onclick="answerQ('qc1',this,true,'Exactly right. The Cedar Hollow deal showed that when you expand the cost comparison beyond your line item to their full stack, the sticker price objection often disappears entirely.')">Build a TCO model showing what they currently spend across all tools your platform replaces</button>
+        <button class="quiz-opt" onclick="answerQ('qc1',this,false,'Defending your price before understanding their full cost picture is reactive. You may be winning an argument you don\u0027t need to have.')">Defend the price by listing all LearnForge features the current vendor doesn't offer</button>
+        <button class="quiz-opt" onclick="answerQ('qc1',this,false,'This is too passive. Asking to be connected doesn\u0027t directly address the price objection and delays the deal unnecessarily.')">Ask to be connected directly to the superintendent to re-pitch the value</button>
+      </div>
+      <div class="quiz-fb" id="qc1fb"></div>
+      <div id="qc1retake" style="display:none;margin-top:10px;"><button class="btn btn-ghost" style="font-size:12px;padding:8px 16px;" onclick="retakeQ('qc1')">↺ Try Again</button></div>
+    </div>
+
+    <div class="quiz-card" id="qc2" style="opacity:0.35;pointer-events:none;">
+      <div class="quiz-num">Question 2 of 4</div>
+      <div class="quiz-q">Which buyer persona is MOST likely to kill a LearnForge deal if not addressed early, according to this training?</div>
+      <div class="quiz-opts" id="qc2opts">
+        <button class="quiz-opt" onclick="answerQ('qc2',this,false,'The Superintendent sets the vision but is rarely in the weeds. Their concerns are usually addressed through outcome data and peer references.')">The Superintendent, because they control all final budget decisions</button>
+        <button class="quiz-opt" onclick="answerQ('qc2',this,true,'Correct. The CTO/IT Director is the most common deal-killer because of security, integration, and compliance concerns. Without their technical sign-off, no deal moves forward.')">The CTO/IT Director, because of data security, FERPA compliance, and integration concerns</button>
+        <button class="quiz-opt" onclick="answerQ('qc2',this,false,'The Curriculum Director is typically your champion, not a blocker — though their buy-in is critical for teacher adoption.')">The Curriculum Director, because teacher adoption determines platform success</button>
+        <button class="quiz-opt" onclick="answerQ('qc2',this,false,'The CFO is a gatekeeper on budget, but can usually be won over with a strong TCO model. They\u0027re less likely to block on principle.')">The CFO, because they control the budget approval process</button>
+      </div>
+      <div class="quiz-fb" id="qc2fb"></div>
+      <div id="qc2retake" style="display:none;margin-top:10px;"><button class="btn btn-ghost" style="font-size:12px;padding:8px 16px;" onclick="retakeQ('qc2')">↺ Try Again</button></div>
+    </div>
+
+    <div class="quiz-card" id="qc3" style="opacity:0.35;pointer-events:none;">
+      <div class="quiz-num">Question 3 of 4</div>
+      <div class="quiz-q">A prospect says "We're required to issue an RFP for purchases over $75K." What is the highest-leverage response according to this training?</div>
+      <div class="quiz-opts" id="qc3opts">
+        <button class="quiz-opt" onclick="answerQ('qc3',this,false,'Waiting for the RFP to be published means the evaluation criteria are already set — often by a competitor. You\u0027ve lost your window to influence the outcome.')">Wait for the RFP to be published, then submit a thorough response</button>
+        <button class="quiz-opt" onclick="answerQ('qc3',this,false,'While co-op purchasing is useful, jumping straight to it without first asking about the RFP stage misses the opportunity to influence criteria if the RFP isn\u0027t written yet.')">Immediately introduce co-op purchasing agreements to bypass the RFP entirely</button>
+        <button class="quiz-opt" onclick="answerQ('qc3',this,true,'Correct. The Cedar Hollow case study showed that shaping the RFP criteria before it\u0027s published is the single highest-leverage move in a procurement-driven deal. Vendors who help write the rubric almost always win.')">Ask if the RFP has been written yet, and if not, share evaluation criteria that align with LearnForge's strengths</button>
+        <button class="quiz-opt" onclick="answerQ('qc3',this,false,'Treating the RFP as a negative event and trying to change the prospect\u0027s mind about following procurement rules is unlikely to work and damages trust.')">Explain the risks of the RFP process and try to convince them to pursue a sole-source justification instead</button>
+      </div>
+      <div class="quiz-fb" id="qc3fb"></div>
+      <div id="qc3retake" style="display:none;margin-top:10px;"><button class="btn btn-ghost" style="font-size:12px;padding:8px 16px;" onclick="retakeQ('qc3')">↺ Try Again</button></div>
+    </div>
+
+    <div class="quiz-card" id="qc4" style="opacity:0.35;pointer-events:none;">
+      <div class="quiz-num">Question 4 of 4</div>
+      <div class="quiz-q">In the Cedar Hollow case study, what was the single most important action Sarah Chen took that led to winning the deal?</div>
+      <div class="quiz-opts" id="qc4opts">
+        <button class="quiz-opt" onclick="answerQ('qc4',this,false,'The demo was important, but it was Sarah\u0027s preparation and discovery work that made it effective — the compliance report demo only landed because she\u0027d done deep discovery first.')">She delivered an exceptional live demo that impressed every stakeholder</button>
+        <button class="quiz-opt" onclick="answerQ('qc4',this,false,'TCO analysis was critical, but it was a reactive move that saved a deal that was nearly lost — not the action that originally created momentum.')">She built a TCO model that convinced the CFO the platform was cost-neutral</button>
+        <button class="quiz-opt" onclick="answerQ('qc4',this,false,'Responding to the board\u0027s AI concerns was important, but it was largely preparation — the deal was already trending toward a yes by that point.')">She prepared a data privacy FAQ before the board meeting to preempt objections</button>
+        <button class="quiz-opt" onclick="answerQ('qc4',this,true,'Exactly right. Through deep discovery, Sarah uncovered that the real urgency was an upcoming state audit — not general tech consolidation. This reframing shaped every subsequent conversation and positioned LearnForge as a must-have, not a nice-to-have.')">She conducted deep discovery that uncovered the real pain (audit risk) beneath the stated goal (consolidation)</button>
+      </div>
+      <div class="quiz-fb" id="qc4fb"></div>
+      <div id="qc4retake" style="display:none;margin-top:10px;"><button class="btn btn-ghost" style="font-size:12px;padding:8px 16px;" onclick="retakeQ('qc4')">↺ Try Again</button></div>
+    </div>
+
+    <div class="nav-row">
+      <button class="btn btn-ghost" onclick="goTo(3)">← Back</button>
+      <button class="btn btn-primary" id="finishBtn" disabled style="opacity:0.4;cursor:not-allowed;" onclick="showComplete()">Complete Certification →</button>
+    </div>
+  </div>
+
+  <!-- ══ COMPLETION ══ -->
+  <div class="module" id="modComplete">
+    <div class="completion">
+      <div class="completion-ring">🎓</div>
+      <h2>Certification Earned!</h2>
+      <p>You've completed the LearnForge Objection Handling Mastery module. You're now certified to handle every major objection in the K–12 and higher ed sales cycle.</p>
+      <div class="score-pill" id="finalScore">— <span>/ 4 questions correct</span></div>
+
+      <div class="cert-preview">
+        <div class="cert-preview-eyebrow">🏅 Certification Awarded</div>
+        <div class="cert-preview-title">Certified EdTech Sales Professional</div>
+        <div class="cert-preview-sub">LearnForge Sales Academy · Objection Handling Track · Module 3 of 6</div>
+        <div class="cert-preview-badge">
+          <span>✓ Add to LinkedIn Profile</span>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <button class="btn btn-ghost" onclick="restart()">↺ Retake Training</button>
+        <button class="btn btn-primary" onclick="goTo(0)">Review Any Module</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ─── STATE ───
+let completed = new Set();
+let quizScore = 0;
+let quizAnswered = 0;
+let sceneDone = false;
+const TOTAL_MODULES = 5;
+
+// Track which activities are done per module
+const activityDone = { match: false, hotspot: false, scene: false };
+// Per-question answered tracking for sequential unlock
+const quizState = { qc1: false, qc2: false, qc3: false, qc4: false };
+
+const TAB_LABELS = ['Know Your Product','Know Your Buyer','Objection Playbook','Case Study','Scenario + Quiz'];
+
+// ─── NAVIGATION ───
+function tryGoTo(idx) {
+  // Only allow navigation to unlocked (done or currently active) modules
+  if (idx === 0) { goTo(0); return; }
+  const prevDone = completed.has(idx - 1);
+  if (!prevDone) {
+    shakeTab(idx);
+    return;
+  }
+  goTo(idx);
+}
+
+function shakeTab(idx) {
+  const tab = document.getElementById('tab' + idx);
+  if (!tab) return;
+  tab.style.animation = 'none';
+  tab.offsetHeight; // reflow
+  tab.style.animation = 'shake 0.4s ease';
+  setTimeout(() => tab.style.animation = '', 450);
+}
+
+function goTo(idx) {
+  document.querySelectorAll('.module').forEach(m => m.classList.remove('active'));
+  const target = document.getElementById('mod' + idx);
+  if (target) target.classList.add('active');
+  document.querySelectorAll('.tab-btn').forEach((b, i) => b.classList.remove('active'));
+  const activeTab = document.getElementById('tab' + idx);
+  if (activeTab) activeTab.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function nextMod(cur) {
+  completed.add(cur);
+  const tab = document.getElementById('tab' + cur);
+  if (tab) { tab.classList.add('done'); tab.classList.remove('active','locked'); }
+
+  // Unlock next tab
+  const nextTab = document.getElementById('tab' + (cur + 1));
+  if (nextTab) {
+    nextTab.classList.remove('locked');
+    nextTab.setAttribute('onclick', 'tryGoTo(' + (cur + 1) + ')');
+    const numSpan = nextTab.querySelector('.tab-num');
+    if (numSpan) numSpan.textContent = (cur + 2);
+  }
+
+  updateProgress();
+  goTo(cur + 1);
+}
+
+function updateProgress() {
+  const pct = Math.round((completed.size / TOTAL_MODULES) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressPct').textContent = pct + '%';
+}
+
+function unlockNextBtn(btnId) {
+  const btn = document.getElementById(btnId);
+  if (btn) { btn.disabled = false; btn.style.opacity = '1'; btn.style.cursor = 'pointer'; btn.removeAttribute('title'); }
+  const hintNum = btnId.replace('nextBtn','');
+  const hint = document.getElementById('nextHint' + hintNum);
+  if (hint) hint.style.display = 'none';
+}
+
+// ─── OBJECTION ACCORDION ───
+function toggleObj(button) {
+  const card = button.closest('.obj-card');
+  const isOpen = card.classList.contains('open');
+  document.querySelectorAll('.obj-card').forEach(c => {
+    c.classList.remove('open');
+    c.querySelector('.obj-header').setAttribute('aria-expanded', 'false');
+  });
+  if (!isOpen) {
+    card.classList.add('open');
+    button.setAttribute('aria-expanded', 'true');
+  }
+}
+
+// ─── SCENARIO ───
+function pickScene(btn, quality, msg) {
+  document.querySelectorAll('#sceneOpts .resp-btn').forEach(b => b.disabled = true);
+  btn.classList.add(quality);
+  const labels = { best: '✓ Best Response — ', ok: '~ Good, but not optimal — ', poor: '✗ Weaker response — ' };
+  const res = document.getElementById('sceneResult');
+  res.className = 'resp-result show ' + quality;
+  res.innerHTML = '<strong>' + labels[quality] + '</strong>' + msg;
+  document.getElementById('sceneRetakeWrap').style.display = 'block';
+  sceneDone = true;
+  // Unlock first quiz question
+  const qc1 = document.getElementById('qc1');
+  qc1.style.pointerEvents = 'auto';
+  qc1.style.opacity = '1';
+}
+
+function retakeScene() {
+  document.querySelectorAll('#sceneOpts .resp-btn').forEach(b => {
+    b.disabled = false;
+    b.classList.remove('best','ok','poor');
+  });
+  document.getElementById('sceneResult').className = 'resp-result';
+  document.getElementById('sceneRetakeWrap').style.display = 'none';
+  // Don't re-lock the quiz — if they already answered it, keep progress
+}
+
+// ─── QUIZ ───
+function answerQ(qid, btn, correct, explanation) {
+  const opts = document.getElementById(qid + 'opts');
+  opts.querySelectorAll('.quiz-opt').forEach(b => b.disabled = true);
+  btn.classList.add(correct ? 'correct' : 'wrong');
+  const fb = document.getElementById(qid + 'fb');
+  fb.className = 'quiz-fb show ' + (correct ? 'correct' : 'wrong');
+  fb.textContent = explanation;
+
+  // Show retake button only if wrong
+  if (!correct) {
+    const retakeEl = document.getElementById(qid + 'retake');
+    if (retakeEl) retakeEl.style.display = 'block';
+  }
+
+  // Only count score and unlock next if not already answered correctly
+  if (!quizState[qid]) {
+    if (correct) {
+      quizScore++;
+      quizState[qid] = true;
+    }
+  }
+
+  if (correct) {
+    // Unlock next question
+    const qNum = parseInt(qid.replace('qc',''));
+    const next = document.getElementById('qc' + (qNum + 1));
+    if (next) { next.style.opacity = '1'; next.style.pointerEvents = 'auto'; }
+
+    // Hide retake on this one since correct
+    const retakeEl = document.getElementById(qid + 'retake');
+    if (retakeEl) retakeEl.style.display = 'none';
+  }
+
+  // Check all 4 answered correctly
+  const allCorrect = Object.values(quizState).every(v => v);
+  if (allCorrect) {
+    completed.add(4);
+    document.getElementById('tab4').classList.add('done');
+    updateProgress();
+    const fb2 = document.getElementById('finishBtn');
+    if (fb2) { fb2.disabled = false; fb2.style.opacity = '1'; fb2.style.cursor = 'pointer'; }
+  }
+}
+
+function retakeQ(qid) {
+  // Reset this question only
+  const opts = document.getElementById(qid + 'opts');
+  opts.querySelectorAll('.quiz-opt').forEach(b => { b.disabled = false; b.classList.remove('correct','wrong'); });
+  const fb = document.getElementById(qid + 'fb');
+  fb.className = 'quiz-fb';
+  fb.textContent = '';
+  const retakeEl = document.getElementById(qid + 'retake');
+  if (retakeEl) retakeEl.style.display = 'none';
+}
+
+// ─── COMPLETION ───
+function showComplete() {
+  document.querySelectorAll('.module').forEach(m => m.classList.remove('active'));
+  document.getElementById('modComplete').classList.add('active');
+  document.getElementById('finalScore').innerHTML = quizScore + ' <span>/ 4 questions correct</span>';
+  document.getElementById('progressFill').style.width = '100%';
+  document.getElementById('progressPct').textContent = '100%';
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+}
+
+// ─── MATCHING ACTIVITY ───
+let draggedPersona = null;
+let selectedPersona = null;
+let matchCorrect = 0;
+const matchAnswers = { cfo: null, cto: null, supt: null, curric: null };
+
+function selectPersona(persona) {
+  if (persona.classList.contains('matched-correct') || persona.classList.contains('matched-wrong')) return;
+  document.querySelectorAll('.match-persona').forEach(el => {
+    el.classList.remove('selected');
+    el.setAttribute('aria-pressed', 'false');
+  });
+  selectedPersona = persona;
+  persona.classList.add('selected');
+  persona.setAttribute('aria-pressed', 'true');
+  document.getElementById('matchInstructions').textContent = `${persona.getAttribute('aria-label').replace('Select ', '')} selected. Choose a pitch hook.`;
+}
+
+function placeSelectedPersona(zone) {
+  if (!selectedPersona || zone.dataset.occupied) return;
+  draggedPersona = selectedPersona;
+  selectedPersona = null;
+  dropItem({ preventDefault() {}, currentTarget: zone });
+}
+
+function handleMatchKey(event, element, kind) {
+  if (event.key !== 'Enter' && event.key !== ' ') return;
+  event.preventDefault();
+  if (kind === 'persona') selectPersona(element);
+  else placeSelectedPersona(element);
+}
+
+function dragStart(e) {
+  draggedPersona = e.target.closest('.match-persona');
+  if (selectedPersona) {
+    selectedPersona.classList.remove('selected');
+    selectedPersona.setAttribute('aria-pressed', 'false');
+    selectedPersona = null;
+  }
+  draggedPersona.classList.add('dragging');
+  e.dataTransfer.effectAllowed = 'move';
+  e.dataTransfer.setData('text/plain', draggedPersona.dataset.persona);
+}
+
+document.addEventListener('dragend', () => {
+  document.querySelectorAll('.match-persona').forEach(el => el.classList.remove('dragging'));
+});
+
+function dragOver(e) {
+  e.preventDefault();
+  e.currentTarget.classList.add('drag-over');
+}
+
+function dragLeave(e) {
+  e.currentTarget.classList.remove('drag-over');
+}
+
+function dropItem(e) {
+  e.preventDefault();
+  const zone = e.currentTarget;
+  zone.classList.remove('drag-over');
+  if (!draggedPersona) return;
+
+  const persona = draggedPersona.dataset.persona;
+  const expected = zone.dataset.answer;
+
+  const prev = zone.dataset.occupied;
+  if (prev) {
+    const prevEl = document.getElementById('mp-' + prev);
+    if (prevEl) {
+      prevEl.classList.remove('matched-correct', 'matched-wrong');
+      prevEl.draggable = true;
+      document.getElementById('matchPile').appendChild(prevEl);
+    }
+    delete matchAnswers[expected];
+  }
+
+  zone.dataset.occupied = persona;
+  matchAnswers[expected] = persona;
+
+  const isCorrect = persona === expected;
+  zone.classList.toggle('correct', isCorrect);
+  zone.classList.toggle('wrong', !isCorrect);
+  zone.classList.add('has-drop');
+  zone.setAttribute('aria-pressed', 'true');
+  const personaLabel = draggedPersona.getAttribute('aria-label').replace('Select ', '');
+  zone.setAttribute('aria-label', `${zone.dataset.label}. ${personaLabel} assigned, ${isCorrect ? 'correct' : 'incorrect'}.`);
+  document.getElementById('matchInstructions').textContent = `${personaLabel} assigned to ${zone.dataset.label}. ${isCorrect ? 'Correct match.' : 'Not the right match; use Reset to try again.'}`;
+
+  const icon = document.getElementById('icon-' + expected);
+  if (icon) icon.textContent = isCorrect ? '✓' : '✗';
+
+  draggedPersona.classList.toggle('matched-correct', isCorrect);
+  draggedPersona.classList.toggle('matched-wrong', !isCorrect);
+  draggedPersona.draggable = false;
+  draggedPersona.tabIndex = -1;
+  draggedPersona.setAttribute('aria-disabled', 'true');
+  draggedPersona.setAttribute('aria-pressed', 'false');
+  zone.appendChild(draggedPersona);
+  draggedPersona = null;
+
+  checkMatchComplete();
+}
+
+function checkMatchComplete() {
+  const filled = Object.values(matchAnswers).filter(v => v !== null).length;
+  if (filled < 4) return;
+  const correct = Object.entries(matchAnswers).filter(([k, v]) => k === v).length;
+  const bar = document.getElementById('matchScore');
+  const txt = document.getElementById('matchScoreText');
+  bar.classList.add('show');
+  if (correct === 4) {
+    bar.className = 'match-score-bar show perfect';
+    txt.textContent = '🎉 Perfect score! You matched all 4 stakeholders correctly.';
+    // Gate unlock: matching done
+    activityDone.match = true;
+    unlockNextBtn('nextBtn1');
+  } else {
+    bar.className = 'match-score-bar show partial';
+    txt.textContent = `${correct}/4 correct. The red ones need another look — reset and try again to unlock the next module.`;
+  }
+}
+
+function resetMatch() {
+  const pile = document.getElementById('matchPile');
+  selectedPersona = null;
+  document.getElementById('matchInstructions').textContent = 'Select a stakeholder, then choose a pitch hook.';
+  document.querySelectorAll('.match-persona').forEach(el => {
+    el.classList.remove('matched-correct', 'matched-wrong', 'dragging', 'selected');
+    el.setAttribute('aria-pressed', 'false');
+    el.removeAttribute('aria-disabled');
+    el.tabIndex = 0;
+    el.draggable = true;
+    pile.appendChild(el);
+  });
+  document.querySelectorAll('.match-drop-zone').forEach(zone => {
+    zone.classList.remove('correct', 'wrong', 'has-drop', 'drag-over');
+    zone.setAttribute('aria-pressed', 'false');
+    zone.setAttribute('aria-label', 'Assign a stakeholder to ' + zone.dataset.label);
+    delete zone.dataset.occupied;
+    const icon = zone.querySelector('.match-result-icon');
+    if (icon) icon.textContent = '';
+  });
+  Object.keys(matchAnswers).forEach(k => matchAnswers[k] = null);
+  const bar = document.getElementById('matchScore');
+  bar.classList.remove('show');
+  // Re-lock next if not yet perfect
+  if (!activityDone.match) {
+    const btn = document.getElementById('nextBtn1');
+    if (btn) { btn.disabled = true; btn.style.opacity = '0.4'; btn.style.cursor = 'not-allowed'; }
+  }
+}
+
+// ─── HOTSPOT ACTIVITY ───
+const hotspotAnswers = {
+  hs1: { correct: 'budget', explanation: '✓ Correct — "budget is extremely tight" is a classic budget objection. The signal is a financial constraint combined with staff cuts, signaling there\u0027s no obvious room for new spend.' },
+  hs2: { correct: 'implementation', explanation: '✓ Correct — This is a failed implementation objection. The prospect is not objecting to price or timing — they\u0027re expressing fear based on a painful past experience. This requires an empathy-first response.' },
+  hs3: { correct: 'stakeholder', explanation: '✓ Correct — Needing buy-in from multiple people (union rep, CFO, Superintendent) before moving forward is a stakeholder alignment objection. Your job is to help your champion navigate this, not wait for it to resolve itself.' },
+  hs4: { correct: 'competitor', explanation: '✓ Correct — Mentioning CourseCloud with an existing district relationship and an attractive package is a direct competitor objection. Don\u0027t panic — acknowledge CourseCloud respectfully and redirect to your differentiators.' }
+};
+
+let hotspotScore = 0;
+let hotspotAnswered = 0;
+const hotspotDone = { hs1: false, hs2: false, hs3: false, hs4: false };
+
+function clickHotspot(el) {
+  el.setAttribute('aria-expanded', el.getAttribute('aria-expanded') !== 'true');
+}
+
+function answerHotspot(hsId, chosen, btn) {
+  const data = hotspotAnswers[hsId];
+  if (!data) return;
+  // Allow retake if previously wrong — check if already correct
+  if (hotspotDone[hsId]) return;
+
+  const isCorrect = chosen === data.correct;
+  // Clear previous state for this question
+  document.querySelectorAll('#' + hsId + '-btns .hs-type-btn').forEach(b => {
+    b.disabled = true;
+    b.classList.remove('correct','wrong');
+  });
+  btn.classList.add(isCorrect ? 'correct' : 'wrong');
+
+  const fb = document.getElementById(hsId + '-fb');
+  if (isCorrect) {
+    fb.className = 'hs-feedback show correct';
+    fb.textContent = data.explanation;
+    hotspotScore++;
+    hotspotDone[hsId] = true;
+    const phrase = document.getElementById(hsId);
+    if (phrase) { phrase.classList.remove('clicked-wrong'); phrase.classList.add('clicked-correct'); }
+    // Show correct btn highlight
+  } else {
+    fb.className = 'hs-feedback show wrong';
+    fb.textContent = `Not quite — think about what core fear or constraint is being expressed in that phrase. The correct type is: ${data.correct === 'budget' ? '💰 Budget' : data.correct === 'implementation' ? '🧪 Failed Implementation' : data.correct === 'stakeholder' ? '👥 Stakeholders' : '🏁 Competitor'}. Try again!`;
+    const phrase = document.getElementById(hsId);
+    if (phrase) phrase.classList.add('clicked-wrong');
+    // Re-enable buttons for retry (except wrong one stays red briefly)
+    setTimeout(() => {
+      document.querySelectorAll('#' + hsId + '-btns .hs-type-btn').forEach(b => {
+        b.disabled = false;
+        b.classList.remove('wrong');
+      });
+      fb.className = 'hs-feedback';
+      fb.textContent = '';
+      if (phrase) phrase.classList.remove('clicked-wrong');
+    }, 1800);
+    return; // Don't count as answered
+  }
+
+  hotspotAnswered++;
+  if (hotspotAnswered === 4) {
+    const scoreEl = document.getElementById('hotspotScore');
+    scoreEl.classList.add('show');
+    scoreEl.className = 'hotspot-score show great';
+    scoreEl.textContent = '🎉 4/4 — Excellent! You correctly identified every objection type. Unlocking the next module...';
+    activityDone.hotspot = true;
+    unlockNextBtn('nextBtn2');
+  }
+}
+
+// ─── FULL RESTART ───
+function restart() {
+  completed.clear();
+  quizScore = 0; quizAnswered = 0; sceneDone = false;
+  hotspotScore = 0; hotspotAnswered = 0;
+  activityDone.match = false; activityDone.hotspot = false; activityDone.scene = false;
+  Object.keys(quizState).forEach(k => quizState[k] = false);
+  Object.keys(hotspotDone).forEach(k => hotspotDone[k] = false);
+
+  // Reset tabs — lock 1-4
+  document.querySelectorAll('.tab-btn').forEach((b, i) => {
+    b.classList.remove('done','active');
+    if (i > 0) {
+      b.classList.add('locked');
+      const numSpan = b.querySelector('.tab-num');
+      if (numSpan) numSpan.textContent = '🔒';
+    }
+  });
+  document.getElementById('tab0').classList.add('active');
+
+  // Re-gate next buttons
+  ['nextBtn1','nextBtn2'].forEach(id => {
+    const btn = document.getElementById(id);
+    if (btn) { btn.disabled = true; btn.style.opacity = '0.4'; btn.style.cursor = 'not-allowed'; btn.title = 'Complete the activity to continue'; }
+  });
+
+  // Reset quiz
+  ['qc1','qc2','qc3','qc4'].forEach((id, i) => {
+    const card = document.getElementById(id);
+    if (card) { card.style.opacity = i === 0 ? '1' : '0.35'; card.style.pointerEvents = i === 0 ? 'auto' : 'none'; }
+    const opts = document.getElementById(id + 'opts');
+    if (opts) opts.querySelectorAll('.quiz-opt').forEach(b => { b.disabled = false; b.classList.remove('correct','wrong'); });
+    const fb = document.getElementById(id + 'fb');
+    if (fb) { fb.className = 'quiz-fb'; fb.textContent = ''; }
+    const retakeEl = document.getElementById(id + 'retake');
+    if (retakeEl) retakeEl.style.display = 'none';
+  });
+  const fb3 = document.getElementById('finishBtn');
+  if (fb3) { fb3.disabled = true; fb3.style.opacity = '0.4'; fb3.style.cursor = 'not-allowed'; }
+
+  // Reset scenario
+  document.querySelectorAll('#sceneOpts .resp-btn').forEach(b => { b.disabled = false; b.classList.remove('best','ok','poor'); });
+  document.getElementById('sceneResult').className = 'resp-result';
+  document.getElementById('sceneRetakeWrap').style.display = 'none';
+  document.getElementById('qc1').style.opacity = '0.35';
+  document.getElementById('qc1').style.pointerEvents = 'none';
+
+  // Reset hotspot
+  document.querySelectorAll('.hs-type-btn').forEach(b => { b.disabled = false; b.classList.remove('correct','wrong'); });
+  document.querySelectorAll('.hs-feedback').forEach(f => { f.className = 'hs-feedback'; f.textContent = ''; });
+  document.querySelectorAll('.hotspot-phrase').forEach(p => { p.classList.remove('clicked-correct','clicked-wrong'); p.setAttribute('aria-expanded', 'false'); });
+  const hs = document.getElementById('hotspotScore');
+  if (hs) { hs.className = 'hotspot-score'; hs.textContent = ''; }
+
+  resetMatch();
+  updateProgress();
+  goTo(0);
+}
+</script>
+</body>
+</html>
