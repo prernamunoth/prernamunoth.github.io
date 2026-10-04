@@ -77,7 +77,10 @@
       background: #fff;
     }
     .content h2 { margin: 0 0 9px; font-size: 19px; }
-    .content p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.7; }
+    .content p, .content li { color: var(--muted); font-size: 14px; line-height: 1.7; }
+    .content p { margin: 0; }
+    .content ul { margin: 0; padding-left: 20px; }
+    .content li + li { margin-top: 7px; }
     .placeholder { color: #64748B; font-style: italic; }
     @media (max-width: 600px) {
       .back { margin: 18px 20px; }
@@ -103,13 +106,22 @@
       <a class="course-link" href="https://share.articulate.com/yyItaIzGMueHusuySincu" target="_blank" rel="noopener">View the course <span aria-hidden="true">&nbsp;↗</span></a>
     </header>
     <div class="content">
-      <section><h2>Problem</h2><p class="placeholder">[Add the problem this course addresses.]</p></section>
-      <section><h2>Audience</h2><p class="placeholder">[Describe the intended learners.]</p></section>
-      <section><h2>My role</h2><p class="placeholder">[Describe your role and contributions.]</p></section>
-      <section><h2>Design decisions</h2><p class="placeholder">[Explain the key learning and design decisions.]</p></section>
-      <section><h2>Results</h2><p class="placeholder">[Add outcomes, feedback or evaluation results.]</p></section>
-      <section><h2>Video walkthrough</h2><p class="placeholder">[Add a video link here when available.]</p></section>
-      <section><h2>Screenshots</h2><p class="placeholder">[Add course screenshots here when available.]</p></section>
+      <section><h2>Problem</h2><p>Knowing the principles isn't the same as applying them under pressure. Learners needed to practise a realistic, time-pressured decision where using AI well means balancing early wins against risk.</p></section>
+      <section><h2>Audience</h2><p>Professionals who use AI at work; designed as practice alongside Pick the Role Before You Prompt.</p></section>
+      <section><h2>My role</h2><p>I wrote the scenario, choices, feedback and scoring, and built it in Articulate Rise.</p></section>
+      <section>
+        <h2>Design decisions</h2>
+        <ul>
+          <li>Learners play a strategy manager advising the COO, so the stakes are clear: the recommendation affects the whole company.</li>
+          <li>Four decisions, each tied to one learning goal, such as weighing incomplete evidence or deciding what AI can safely handle.</li>
+          <li>Each choice earns full, partial or no credit, because real decisions are rarely simply right or wrong, and the character's reply changes with each choice so learners see the effect.</li>
+          <li>The answer order shuffles on every attempt, so learners can't pass by remembering positions.</li>
+          <li>The results page shows each goal as passed, partly passed or missed, so learners know exactly what to work on.</li>
+          <li>Next version: branch the conversation based on earlier choices.</li>
+        </ul>
+      </section>
+      <section><h2>Results</h2><p>A score of 80% or higher passes, and a one-question survey asks whether learners feel more equipped to work with AI.</p></section>
+      <section hidden><h2>Screenshots</h2></section>
     </div>
   </main>
 </body>

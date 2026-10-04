@@ -1033,6 +1033,36 @@
     .edu-grid { grid-template-columns: repeat(3,1fr) !important; }
     @media(max-width: 1024px) { .edu-grid { grid-template-columns: repeat(2,1fr) !important; } }
     @media(max-width: 640px)  { .edu-grid { grid-template-columns: 1fr !important; } }
+
+    /* ─── Intentional AI ─────────────────────────────────── */
+    .ai-studio-poster { min-height: 100%; padding: 24px; background: #fff; }
+    .ai-studio-poster figure { width: 100%; margin: 0; }
+    .ai-studio-poster img { width: 100%; height: auto; border-radius: var(--r-sm); }
+    .ai-studio-poster figcaption { margin-top: 10px; color: var(--text-muted); font-size: 12px; line-height: 1.5; }
+    .ai-studio-subtitle { margin: 0 0 18px; color: var(--text-muted); font-size: 15px; line-height: 1.6; }
+    .ai-stats-label { margin: 14px 0 10px; font-family: var(--fmono); font-size: 9px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); }
+    .ai-stats .case-metric { flex: 1 1 40%; min-width: 112px; padding: 12px; border-radius: var(--r-sm); background: var(--cream-2); }
+    .ai-stats .case-metric strong { font-size: 24px; }
+    .ai-stats .case-metric span { line-height: 1.5; }
+    .ai-studio-subsection { margin-top: 38px; }
+    .ai-studio-subsection .sect-title { font-size: clamp(22px, 3vw, 30px); margin-bottom: 14px; }
+    .ai-studio-copy { max-width: 880px; color: var(--text-muted); font-size: 14px; line-height: 1.7; }
+    .ai-feature-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 18px; }
+    .ai-feature, .ai-decision, .ai-results { padding: 22px; border: 1px solid var(--border); border-radius: var(--r); background: #fff; }
+    .ai-feature h4, .ai-decision h4 { margin-bottom: 8px; font-family: var(--fhead); font-size: 16px; line-height: 1.35; }
+    .ai-feature p, .ai-decision p { color: var(--text-muted); font-size: 13px; line-height: 1.7; }
+    .ai-decisions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 16px; }
+    .ai-results { margin-top: 14px; }
+    .ai-results li { margin: 0 0 9px 18px; color: var(--text-muted); font-size: 13px; line-height: 1.65; }
+    .ai-results li:last-child { margin-bottom: 0; }
+    .ai-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 18px; }
+    .ai-gallery figure { margin: 0; overflow: hidden; border: 1px solid var(--border); border-radius: var(--r); background: #fff; }
+    .ai-gallery img { width: 100%; height: auto; }
+    .ai-gallery figcaption { padding: 14px 16px 16px; color: var(--text-muted); font-size: 12px; line-height: 1.6; }
+    @media(max-width: 768px) {
+      .ai-feature-grid, .ai-decisions, .ai-gallery { grid-template-columns: 1fr; }
+      .ai-studio-poster { padding: 18px; }
+    }
   </style>
 </head>
 <body>
@@ -1048,9 +1078,10 @@
       <li><a href="#about">01 About</a></li>
       <li><a href="#skills">02 Skills</a></li>
       <li><a href="#experience">03 Experience</a></li>
-      <li><a href="#work">04 Work</a></li>
-      <li><a href="#education">05 Credentials</a></li>
-      <li><a href="#contact">06 Connect</a></li>
+      <li><a href="#intentional-ai">04 Intentional AI</a></li>
+      <li><a href="#case-studies">05 Case Studies</a></li>
+      <li><a href="#education">06 Credentials</a></li>
+      <li><a href="#contact">07 Connect</a></li>
     </ul>
     <div class="nav-toggle" id="navToggle"><span></span><span></span><span></span></div>
   </nav>
@@ -1059,9 +1090,10 @@
     <a href="#about"      onclick="closeMob()">01 · About</a>
     <a href="#skills"     onclick="closeMob()">02 · Skills</a>
     <a href="#experience" onclick="closeMob()">03 · Experience</a>
-    <a href="#work"       onclick="closeMob()">04 · Work</a>
-    <a href="#education"  onclick="closeMob()">05 · Credentials</a>
-    <a href="#contact"    onclick="closeMob()">06 · Connect</a>
+    <a href="#intentional-ai" onclick="closeMob()">04 · Intentional AI</a>
+    <a href="#case-studies"   onclick="closeMob()">05 · Case Studies</a>
+    <a href="#education"      onclick="closeMob()">06 · Credentials</a>
+    <a href="#contact"        onclick="closeMob()">07 · Connect</a>
   </div>
 
   <!-- ════ HERO ════════════════════════════════════════════ -->
@@ -1082,9 +1114,9 @@
         <span class="hero-chip">Quality Matters Certified</span>
       </div>
       <div class="hero-actions">
-        <a href="#work" class="btn btn-amber">View Case Studies</a>
+        <a href="#case-studies" class="btn btn-amber">View Case Studies</a>
         <a href="#contact" class="btn btn-ghost">Get in Touch</a>
-        <a href="projects/ai-rubric-quiz-tools/" class="btn btn-ghost">First place, 2026 SMU Technology Showcase</a>
+        <a href="#intentional-ai" class="btn btn-ghost">First place, 2026 SMU Technology Showcase</a>
       </div>
     </div>
     <div class="hero-scroll"><div class="scroll-line"></div>SCROLL</div>
@@ -1496,11 +1528,126 @@
     </div>
   </section>
 
-  <!-- ════ MODULE 04: CASE STUDIES ═════════════════════════ -->
-  <section id="work" class="sect sect-subtle">
+  <!-- ════ MODULE 04: INTENTIONAL AI ═══════════════════════ -->
+  <section id="intentional-ai" class="sect sect-dark">
     <div class="container">
-      <div class="mod-tag"><span class="mod-num">04</span>Case Studies</div>
-      <h2 class="sect-title reveal">Work that moved the needle.</h2>
+      <div class="mod-tag"><span class="mod-num">04</span>Intentional AI</div>
+      <h2 class="sect-title reveal">Intentional AI</h2>
+      <p class="sect-desc reveal">AI tools I've built for course design, each with a human review step before anything reaches learners.</p>
+
+      <article class="case-card wide ai-studio reveal">
+        <div class="case-vis ai-studio-poster">
+          <figure>
+            <a href="images/smu-tech-showcase-2026-first-place.jpg" target="_blank" rel="noopener">
+              <img src="images/smu-tech-showcase-2026-first-place.jpg" width="1446" height="822" loading="lazy" alt="Poster for the Canvas Rubric &amp; Quiz Builder, winner of first place at the 2026 SMU Technology Showcase">
+            </a>
+            <figcaption>First place, 2026 SMU Technology Showcase (Canvas Rubric &amp; Quiz Builder)</figcaption>
+          </figure>
+        </div>
+        <div class="case-body">
+          <div class="case-cat">AWARD-WINNING · SMU LYLE SCHOOL OF ENGINEERING · AI TOOLS</div>
+          <h3 class="case-title">Course Design Studio</h3>
+          <p class="ai-studio-subtitle">From two award-winning tools to one complete course design workflow.</p>
+          <div class="ai-stats-label">Canvas Rubric &amp; Quiz Builder results</div>
+          <div class="case-metrics ai-stats">
+            <div class="case-metric"><strong>~90%</strong><span>BUILD TIME REDUCED</span></div>
+            <div class="case-metric"><strong>25+</strong><span>COURSES SUPPORTED</span></div>
+            <div class="case-metric"><strong>200</strong><span>RUBRICS FOR 50 FACULTY</span></div>
+            <div class="case-metric"><strong>100</strong><span>QUIZZES FOR 25 FACULTY</span></div>
+          </div>
+          <div class="case-tools">
+            <span class="case-tool">Streamlit</span>
+            <span class="case-tool">Custom GPTs</span>
+            <span class="case-tool">Canvas</span>
+            <span class="case-tool">Quality Matters</span>
+            <span class="case-tool">Human-in-the-loop</span>
+          </div>
+        </div>
+      </article>
+
+      <div class="ai-studio-subsection">
+        <h3 class="sect-title reveal">How it started</h3>
+        <p class="ai-studio-copy reveal">I built a Canvas Rubric &amp; Quiz Builder to cut the hours faculty and designers spent rebuilding rubrics and quizzes by hand. A quiz with 50+ questions took 5 to 6 hours to build, and rubrics often lived in Word documents or only as assignment descriptions. The tools cut build time by almost 90% across 25+ courses and won first place at the 2026 SMU Technology Showcase.</p>
+      </div>
+
+      <div class="ai-studio-subsection">
+        <h3 class="sect-title reveal">Where it went next</h3>
+        <p class="ai-studio-copy reveal">Rubrics and quizzes were only one part of the job. Designers were still moving between documents, spreadsheets and separate tools to write outcomes, align assessments and prepare for Quality Matters review. So I brought everything into one place. Course Design Studio now takes a course from source material to Canvas-ready content in a single workflow:</p>
+        <div class="ai-feature-grid">
+          <article class="ai-feature reveal"><h4>Outcomes</h4><p>Writes course and module outcomes from source material, then checks each one for verb, Bloom level, measurability and fit.</p></article>
+          <article class="ai-feature reveal"><h4>Assessments and assignments</h4><p>Suggests activities and assignments aligned to each outcome.</p></article>
+          <article class="ai-feature reveal"><h4>Alignment, grading and QM</h4><p>Builds the alignment map, grading policy, course blueprint and Quality Matters plan.</p></article>
+          <article class="ai-feature reveal"><h4>Rubric App</h4><p>Turns assignments or Word rubrics into Canvas-ready rubrics.</p></article>
+          <article class="ai-feature reveal"><h4>QTI Converter</h4><p>Turns quiz documents into Canvas-importable quiz packages.</p></article>
+          <article class="ai-feature reveal"><h4>Alt Text Generator</h4><p>Drafts image descriptions for accessibility.</p></article>
+        </div>
+        <p class="ai-studio-copy reveal" style="margin-top:16px;"><strong>Every tool has a review step:</strong> nothing goes into a course until a person has checked it.</p>
+      </div>
+
+      <div class="ai-studio-subsection">
+        <h3 class="sect-title reveal">Design decisions</h3>
+        <div class="ai-decisions">
+          <article class="ai-decision reveal"><h4>Why one workflow instead of separate tools</h4><p>Once the rubric and quiz tools were in use, I could see where the rest of the time went. Designers re-entered the same course details in different tools and kept outcomes, assessments and QM notes in separate documents, which made alignment hard to check. In one studio, the course is set up once and each step builds on the last: outcomes flow straight into assessments, alignment and the QM plan.</p></article>
+          <article class="ai-decision reveal"><h4>Why a review step before anything is exported</h4><p>AI drafts quickly, but faculty are responsible for what students see. Every tool shows a preview first: outcomes are checked for Bloom level and measurability, rubrics are validated before export, and quizzes are flagged for review. The AI does the slow work, and people make the decisions.</p></article>
+          <article class="ai-decision reveal"><h4>Why Streamlit plus custom GPTs</h4><p>Custom GPTs let faculty start right away in a tool they already knew, with no setup. But GPTs can't reliably produce files Canvas will import. Streamlit let me build that part: structured outputs, previews and direct Canvas downloads. Using both meant faculty got help immediately while I built the reliable version.</p></article>
+          <article class="ai-decision reveal"><h4>Fitting how faculty actually work</h4><p>Faculty start from different places, so the tools meet them there. Rubrics can be generated from an assignment, imported from Word or CSV, built by hand or started from a template, with optional range scoring. Quizzes can come from Word, PDF or text files, with or without an answer key. Step-by-step guides cover the rest, including how to move quizzes into New Quizzes.</p></article>
+        </div>
+      </div>
+
+      <div class="ai-studio-subsection">
+        <h3 class="sect-title reveal">Results</h3>
+        <div class="ai-results reveal">
+          <ul>
+            <li><strong>Rubric &amp; Quiz Builder:</strong> build time cut by almost 90% across 25+ courses, tracked in a log.</li>
+            <li><strong>200 rubrics for 50 faculty:</strong> 160 created from assignment details and 40 converted from rubrics in documents.</li>
+            <li><strong>100 quizzes for 25 faculty.</strong></li>
+            <li><strong>First place</strong> at the 2026 SMU Technology Showcase.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ai-studio-subsection">
+        <h3 class="sect-title reveal">What's next</h3>
+        <p class="ai-studio-copy reveal">Taking the studio online so more faculty and designers can use it on their own.</p>
+      </div>
+
+      <div class="ai-studio-subsection">
+        <h3 class="sect-title reveal">Course Design Studio gallery</h3>
+        <div class="ai-gallery">
+          <figure class="reveal">
+            <a href="images/outcome-quality-review.jpg" target="_blank" rel="noopener"><img src="images/outcome-quality-review.jpg" width="1600" height="793" loading="lazy" alt="Each outcome is checked for verb, Bloom level, measurability and course fit, with a suggested revision when it falls short."></a>
+            <figcaption>Each outcome is checked for verb, Bloom level, measurability and course fit, with a suggested revision when it falls short.</figcaption>
+          </figure>
+          <figure class="reveal">
+            <a href="images/rubric-preview-editor.jpg" target="_blank" rel="noopener"><img src="images/rubric-preview-editor.jpg" width="1600" height="861" loading="lazy" alt="Faculty review and edit the rubric before export; validation confirms it's ready for Canvas."></a>
+            <figcaption>Faculty review and edit the rubric before export; validation confirms it's ready for Canvas.</figcaption>
+          </figure>
+          <figure class="reveal">
+            <a href="images/qti-converter.jpg" target="_blank" rel="noopener"><img src="images/qti-converter.jpg" width="1600" height="762" loading="lazy" alt="Quiz documents become Canvas-importable QTI packages, with a plain-text preview and flags for review."></a>
+            <figcaption>Quiz documents become Canvas-importable QTI packages, with a plain-text preview and flags for review.</figcaption>
+          </figure>
+          <figure class="reveal">
+            <a href="images/course-design-studio-outcomes.jpg" target="_blank" rel="noopener"><img src="images/course-design-studio-outcomes.jpg" width="1600" height="793" loading="lazy" alt="Course and module outcomes, aligned and ready to review."></a>
+            <figcaption>Course and module outcomes, aligned and ready to review.</figcaption>
+          </figure>
+          <figure class="reveal">
+            <a href="images/assessment-alignment.jpg" target="_blank" rel="noopener"><img src="images/assessment-alignment.jpg" width="1600" height="793" loading="lazy" alt="Assessments and activities suggested for each outcome, plus an engagement plan."></a>
+            <figcaption>Assessments and activities suggested for each outcome, plus an engagement plan.</figcaption>
+          </figure>
+          <figure class="reveal">
+            <a href="images/assignment-generator.jpg" target="_blank" rel="noopener"><img src="images/assignment-generator.jpg" width="1600" height="793" loading="lazy" alt="Assignments generated from existing outcomes or source material."></a>
+            <figcaption>Assignments generated from existing outcomes or source material.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ MODULE 05: CASE STUDIES ═════════════════════════ -->
+  <section id="case-studies" class="sect sect-subtle">
+    <div class="container">
+      <div class="mod-tag"><span class="mod-num">05</span>Case Studies</div>
+      <h2 class="sect-title reveal">Case Studies</h2>
       <p class="sect-desc reveal">Verified outcomes only — no guesswork.</p>
 
       <div class="cases-grid">
@@ -1527,7 +1674,7 @@
         <!-- Canvas Rubric & Quiz Builder -->
         <a class="case-card reveal" href="projects/ai-rubric-quiz-tools/" style="display:block;" aria-label="Open Canvas Rubric and Quiz Builder project">
           <div class="case-vis">
-            <img src="images/smu-tech-showcase-2026-first-place.jpg" alt="Poster for the Canvas Rubric &amp; Quiz Builder, winner of first place at the 2026 SMU Technology Showcase" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
+            <img src="images/smu-tech-showcase-2026-first-place.jpg" width="1446" height="822" alt="Poster for the Canvas Rubric &amp; Quiz Builder, winner of first place at the 2026 SMU Technology Showcase" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="case-body">
             <div class="case-cat">First Place · 2026 SMU Technology Showcase</div>
@@ -1545,6 +1692,9 @@
 
         <!-- Disputes Desk -->
         <a class="case-card reveal" href="projects/disputes-desk/" style="display:block;" aria-label="Open Disputes Desk project">
+          <div class="case-vis">
+            <img src="images/disputes-desk-thumb.jpg" width="1016" height="572" loading="lazy" alt="Screenshot of the Disputes Desk onboarding module overview and progress navigation" style="width:100%;height:100%;object-fit:cover;object-position:top;">
+          </div>
           <div class="case-body">
             <div class="case-cat">Scenario-Based Learning · Simulation</div>
             <div class="case-title">Disputes Desk</div>
@@ -1555,6 +1705,24 @@
               <span class="case-tool">Simulation</span>
               <span class="case-tool">Branching scenarios</span>
               <span class="case-tool">AI-assisted prototyping</span>
+            </div>
+          </div>
+        </a>
+
+        <!-- LearnForge sales enablement simulation -->
+        <a class="case-card reveal" href="projects/sales-enablement/" style="display:block;" aria-label="Open sales enablement training simulation">
+          <div class="case-vis">
+            <img src="images/sales-enablement-thumb.jpg" width="1016" height="572" loading="lazy" alt="Screenshot of the Objection Handling for EdTech Sales module opening screen" style="width:100%;height:100%;object-fit:cover;object-position:top;">
+          </div>
+          <div class="case-body">
+            <div class="case-cat">Scenario-Based Learning · Sales Enablement</div>
+            <div class="case-title">Objection Handling for EdTech Sales</div>
+            <div class="case-desc">A certification-style module for edtech sales reps at a fictional company. Learners study the product and buyer personas, work through an objection playbook, analyse a call transcript, follow a full deal from first contact to signed contract, then practise a role-play and a knowledge check.</div>
+            <div class="case-tools">
+              <span class="case-tool">Sales enablement</span>
+              <span class="case-tool">Scenario-based learning</span>
+              <span class="case-tool">Case study</span>
+              <span class="case-tool">Certification track</span>
             </div>
           </div>
         </a>
@@ -1725,10 +1893,10 @@
     </div>
   </section>
 
-  <!-- ════ MODULE 05: EDUCATION & CERTS ════════════════════ -->
+  <!-- ════ MODULE 06: EDUCATION & CERTS ════════════════════ -->
   <section id="education" class="sect sect-dark" style="padding-top:60px;">
     <div class="container">
-      <div class="mod-tag"><span class="mod-num">05</span>Credentials</div>
+      <div class="mod-tag"><span class="mod-num">06</span>Credentials</div>
       <h2 class="sect-title reveal">Education &amp; Certifications.</h2>
 
       <div class="edu-grid">
@@ -1809,12 +1977,12 @@
     </div>
   </section>
 
-  <!-- ════ MODULE 06: CONTACT ═══════════════════════════════ -->
+  <!-- ════ MODULE 07: CONTACT ═══════════════════════════════ -->
   <section id="contact">
     <div class="container">
       <div class="contact-header">
         <div class="mod-tag" style="justify-content:center;display:flex;">
-          <span class="mod-num" style="background:var(--amber);color:var(--navy);">06</span>
+          <span class="mod-num" style="background:var(--amber);color:var(--navy);">07</span>
           Connect
         </div>
         <h2 class="sect-title reveal" style="color:var(--navy);">Ready to build something remarkable?</h2>
